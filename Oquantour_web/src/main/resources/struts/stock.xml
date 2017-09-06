@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE struts PUBLIC
+        "-//Apache Software Foundation//DTD Struts Configuration 2.1.7//EN"
+        "http://struts.apache.org/dtds/struts-2.1.7.dtd">
+<struts>
+    <package name="stock" extends="json-default,struts-default">
+        <action name="getKLineInfo" class="oquantour.action.StockAction" method="getKLine">
+            <result type="json">
+                <param name="root">result</param>
+            </result>
+        </action>
+        <action name="getAllStockNameAndCode" class="oquantour.action.StockAction" method="getAllStockNameAndCode">
+            <result type="json">
+                <param name="root">result</param>
+            </result>
+        </action>
+        <action name="getRecommendedStock" class="oquantour.action.StockAction" method="getRecommendedStock">
+            <result type="json">
+                <param name="root">result</param>
+            </result>
+        </action>
+        <action name="getStockByPlate" class="oquantour.action.StockAction" method="getStockByPlate">
+            <result type="json">
+                <param name="root">result</param>
+            </result>
+        </action>
+        <action name="selectStock" class="oquantour.action.StockAction" method="selectStock">
+            <result type="json">
+                <param name="root">result</param>
+            </result>
+        </action>
+    </package>
+</struts>

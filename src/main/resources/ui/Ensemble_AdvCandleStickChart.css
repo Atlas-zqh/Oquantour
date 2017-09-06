@@ -1,0 +1,242 @@
+/*
+ * Part of Ensemble CSS
+ * related to AdvCandleStickChart
+ *
+ * extracted by Nicolas
+ * July 20th, 2016
+ *
+ * Initial CSS:
+ * http://grepcode.com/file/repo1.maven.org/maven2/org.jbundle.javafx.example/org.jbundle.javafx.example.ensemble/0.9.0/ensemble/ensemble2.css?av=f
+ *
+ */
+
+/*
+ * Copyright (c) 2008, 2012 Oracle and/or its affiliates.
+ * All rights reserved. Use is subject to license terms.
+ *
+ * This file is available and licensed under the following license:
+ *
+ * Redistribution and use in source and binary forms, with or without
+ * modification, are permitted provided that the following conditions
+ * are met:
+ *
+ *  - Redistributions of source code must retain the above copyright
+ *    notice, this list of conditions and the following disclaimer.
+ *  - Redistributions in binary form must reproduce the above copyright
+ *    notice, this list of conditions and the following disclaimer in
+ *    the documentation and/or other materials provided with the distribution.
+ *  - Neither the name of Oracle Corporation nor the names of its
+ *    contributors may be used to endorse or promote products derived
+ *    from this software without specific prior written permission.
+ *
+ * THIS SOFTWARE IS PROVIDED BY THE COPYRIGHT HOLDERS AND CONTRIBUTORS
+ * "AS IS" AND ANY EXPRESS OR IMPLIED WARRANTIES, INCLUDING, BUT NOT
+ * LIMITED TO, THE IMPLIED WARRANTIES OF MERCHANTABILITY AND FITNESS FOR
+ * A PARTICULAR PURPOSE ARE DISCLAIMED. IN NO EVENT SHALL THE COPYRIGHT
+ * OWNER OR CONTRIBUTORS BE LIABLE FOR ANY DIRECT, INDIRECT, INCIDENTAL,
+ * SPECIAL, EXEMPLARY, OR CONSEQUENTIAL DAMAGES (INCLUDING, BUT NOT
+ * LIMITED TO, PROCUREMENT OF SUBSTITUTE GOODS OR SERVICES; LOSS OF USE,
+ * DATA, OR PROFITS; OR BUSINESS INTERRUPTION) HOWEVER CAUSED AND ON ANY
+ * THEORY OF LIABILITY, WHETHER IN CONTRACT, STRICT LIABILITY, OR TORT
+ * (INCLUDING NEGLIGENCE OR OTHERWISE) ARISING IN ANY WAY OUT OF THE USE
+ * OF THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
+ */
+
+/* ====== CANDLE STICK CHART =========================================================== */
+.candlestick-tooltip-label {
+    -fx-font-size: 15px;
+    -fx-font-family: PingFang SC;
+    -fx-font-weight: bold;
+    -fx-text-fill: #c4c4c4;
+    -fx-padding: 2 5 2 0;
+}
+
+.candlestick-tooltip-label1 {
+    -fx-font-size: 15px;
+    -fx-font-family: PingFang SC;
+    -fx-font-weight: bold;
+    -fx-text-fill: #ffffff;
+    -fx-padding: 2 5 2 0;
+}
+
+.candlestick-tooltip-label2 {
+    -fx-font-size: 15px;
+    -fx-font-family: PingFang SC;
+    -fx-font-weight: bold;
+    -fx-text-fill: #d6c476;
+    -fx-padding: 2 5 2 0;
+}
+
+.candlestick-tooltip-label3 {
+    -fx-font-size: 15px;
+    -fx-font-family: PingFang SC;
+    -fx-font-weight: bold;
+    -fx-text-fill: #b979a0;
+    -fx-padding: 2 5 2 0;
+}
+
+.candlestick-tooltip-label4 {
+    -fx-font-size: 15px;
+    -fx-font-family: PingFang SC;
+    -fx-font-weight: bold;
+    -fx-text-fill: #8cc179;
+    -fx-padding: 2 5 2 0;
+}
+
+.candlestick-tooltip-label5 {
+    -fx-font-size: 15px;
+    -fx-font-family: PingFang SC;
+    -fx-font-weight: bold;
+    -fx-text-fill: #7fadbf;
+    -fx-padding: 2 5 2 0;
+}
+
+.candlestick-tooltip-label6 {
+    -fx-font-size: 15px;
+    -fx-font-family: PingFang SC;
+    -fx-font-weight: bold;
+    -fx-text-fill: #f76f4c;
+    -fx-padding: 2 5 2 0;
+}
+
+.candlestick-line {
+    -fx-stroke: #6e6e6e;
+    /*rgb(191, 185, 180);*/
+}
+
+.candlestick-bar {
+    -demo-bar-fill: #565656;
+    -fx-background-color: linear-gradient(derive(-demo-bar-fill, 0%), derive(-demo-bar-fill, 0%));
+
+}
+
+.candlestick-bar.close-above-open {
+    -demo-bar-fill: #4c9b8e;
+    /*#279555;*/
+    /*#05ca89;*/
+}
+
+.candlestick-bar.open-above-close {
+    -demo-bar-fill: #d97555;
+    /*#b4071f;*/
+    /*#ea0010;*/
+}
+
+.chart-plot-background {
+    -fx-background-color: black;
+}
+
+/*******************************************************************************
+ *                                                                             *
+ * Charts                                                                      *
+ *                                                                             *
+ ******************************************************************************/
+
+.chart {
+    -fx-padding: 5px;
+}
+
+.chart-plot-background {
+    -fx-background-color: #ffffff00;
+    /*derive(-fx-base, 26.4%);*/
+}
+
+.chart-content {
+    -fx-padding: 5px;
+    -fx-text-fill: red;
+}
+
+.chart-title {
+    -fx-font-size: 1.4em;
+    -fx-text-fill: #689cc4;
+}
+
+.chart-legend {
+    -fx-background-color: #565656;
+    /*-fx-shadow-highlight-color,*/
+    /*linear-gradient(to bottom, derive(-fx-background, -10%), derive(-fx-background, -5%)),*/
+    /*linear-gradient(from 0px 0px to 0px 4px, derive(-fx-background, -4%), derive(-fx-background, 10%));*/
+    -fx-background-insets: 0 0 -1 0, 0, 1;
+    -fx-background-radius: 4, 4, 3;
+    -fx-padding: 6px;
+}
+
+/*******************************************************************************
+ *                                                                             *
+ * Axis                                                                        *
+ *                                                                             *
+ ******************************************************************************/
+
+.axis {
+    AXIS_COLOR: #a8a8a8;
+    /*derive(derive(-fx-base, 26.4%), -20%);*/
+    -fx-tick-label-font-size: 0.833333em; /* 10px */
+    -fx-tick-label-fill: #a8a8a8;
+    /*derive(-fx-text-background-color, 30%);*/
+}
+
+.axis:top {
+    -fx-border-color: transparent transparent AXIS_COLOR transparent;
+}
+
+.axis:right {
+    -fx-border-color: transparent transparent transparent AXIS_COLOR;
+}
+
+.axis:bottom {
+    -fx-border-color: AXIS_COLOR transparent transparent transparent;
+}
+
+.axis:left {
+    -fx-border-color: transparent AXIS_COLOR transparent transparent;
+}
+
+.axis:top > .axis-label,
+.axis:left > .axis-label {
+    -fx-padding: 0 0 4px 0;
+}
+
+.axis:bottom > .axis-label,
+.axis:right > .axis-label {
+    -fx-padding: 4px 0 0 0;
+}
+
+.axis-tick-mark,
+.axis-minor-tick-mark {
+    -fx-fill: null;
+    -fx-stroke: AXIS_COLOR;
+}
+
+/*******************************************************************************
+ *                                                                             *
+ * ChartPlot                                                                   *
+ *                                                                             *
+ ******************************************************************************/
+
+.chart-vertical-grid-lines {
+    -fx-stroke: #ddd9de;
+    /*derive(-fx-background, -10%);*/
+    -fx-stroke-dash-array: 0.5em, 0.5em;
+}
+
+.chart-horizontal-grid-lines {
+    -fx-stroke: #ddd9de;
+    /*derive(-fx-background, -10%);*/
+    -fx-stroke-dash-array: 0.5em, 0.5em;
+}
+
+.chart-alternative-column-fill {
+    -fx-fill: null;
+    -fx-stroke: null;
+}
+
+.chart-alternative-row-fill {
+    -fx-fill: null;
+    -fx-stroke: null;
+}
+
+.chart-vertical-zero-line,
+.chart-horizontal-zero-line {
+    -fx-stroke: derive(-fx-text-background-color, 40%);
+}
+

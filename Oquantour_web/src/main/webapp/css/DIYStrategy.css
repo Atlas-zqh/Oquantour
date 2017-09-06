@@ -1,0 +1,48 @@
+img {
+    outline: none;
+}
+
+#selectStockTable thead tr th {
+    font-weight: normal;
+    font-size: 18px;
+}
+
+#selectStockTable tbody tr td {
+    text-align: center;
+}
+
+#buyStockTable thead tr th {
+    font-weight: normal;
+    font-size: 18px;
+}
+
+#weightStockTable thead tr th {
+    font-weight: normal;
+    font-size: 18px;
+}
+
+.indexQuestion:hover {
+    cursor: pointer;
+}
+
+.mdl-data-table td, .mdl-data-table td .mdl-data-table__select {
+    text-align: center;
+    vertical-align: middle;
+}
+
+.confirmChoose {
+    background-color: #95a6b3;
+    border: none;
+    color: #fff;
+    width: 120px;
+    /*height: 20px;*/
+    font-weight: 300;
+    font-size: 14px;
+    padding: 8px;
+    letter-spacing: 3px;
+    text-indent: 3px;
+}
+
+#confirmChoose:hover {
+    background-color: #a6b9c7;
+}

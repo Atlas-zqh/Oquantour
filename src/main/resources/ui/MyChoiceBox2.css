@@ -1,0 +1,20 @@
+.choice-box .label {
+    -fx-text-fill: #838383;
+    -fx-background-color: #ffffff00;
+}
+
+.choice-box .context-menu {
+    -fx-border-color: #76acd5;
+    -fx-border-width: 2;
+    -fx-background-color: #ffffff;
+    -fx-pref-width: 165;
+}
+
+.choice-box .menu-item:focused {
+    -fx-background-color: #74acd6;
+}
+
+.choice-box {
+    -fx-mark-color: #689cc4;
+}
+

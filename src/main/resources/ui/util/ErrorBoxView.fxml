@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.layout.Pane?>
+<?import javafx.scene.text.Font?>
+
+<Pane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="200.0"
+      prefWidth="300.0"
+      style="-fx-background-color: transparent; -fx-opacity: 0.6; -fx-border-color: #689cc4; -fx-border-width: 3;"
+      xmlns="http://javafx.com/javafx/8.0.65" xmlns:fx="http://javafx.com/fxml/1"
+      fx:controller="ui.util.ErrorBoxController">
+    <children>
+        <Label fx:id="errorLabel" alignment="CENTER" layoutX="21.0" layoutY="14.0" prefHeight="173.0" prefWidth="259.0"
+               text="Label" textAlignment="CENTER" textFill="#d97555" wrapText="true">
+            <font>
+                <Font name="PingFang SC" size="22.0"/>
+            </font>
+        </Label>
+    </children>
+</Pane>

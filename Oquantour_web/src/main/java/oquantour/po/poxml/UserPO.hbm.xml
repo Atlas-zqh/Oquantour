@@ -1,0 +1,13 @@
+<?xml version='1.0' encoding='utf-8'?>
+<!DOCTYPE hibernate-mapping PUBLIC
+        "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+        "http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
+<hibernate-mapping>
+
+    <class name="oquantour.po.UserPO" table="userpo" schema="oquantour">
+        <id name="userName" column="UserName"/>
+        <property name="phone" column="Phone"/>
+        <property name="userPassword" column="UserPassword"/>
+        <property name="email" column="Email"/>
+    </class>
+</hibernate-mapping>

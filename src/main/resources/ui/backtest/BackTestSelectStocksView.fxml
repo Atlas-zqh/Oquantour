@@ -1,0 +1,400 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.Cursor?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.CheckBox?>
+<?import javafx.scene.control.ChoiceBox?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.ScrollPane?>
+<?import javafx.scene.control.Tab?>
+<?import javafx.scene.control.TabPane?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.Pane?>
+<?import javafx.scene.shape.Rectangle?>
+<?import javafx.scene.text.Font?>
+
+<Pane fx:id="searchPane" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity"
+      prefHeight="405.0" prefWidth="1280.0" style="-fx-background-color: #ffffff00;"
+      xmlns="http://javafx.com/javafx/8.0.111" xmlns:fx="http://javafx.com/fxml/1"
+      fx:controller="ui.backtest.BackTestSelectStocksController">
+    <children>
+        <Rectangle arcHeight="5.0" arcWidth="5.0" fill="#292929" height="407.0" layoutX="-1.0" layoutY="-1.0"
+                   opacity="0.69" stroke="BLACK" strokeType="INSIDE" strokeWidth="0.0" width="1282.0"/>
+        <Label fx:id="typeLabel" layoutX="70.0" layoutY="13.0" prefHeight="49.0" prefWidth="330.0"
+               text="B A C K T E S T" textFill="WHITE" wrapText="true">
+            <font>
+                <Font name="Helvetica" size="28.0"/>
+            </font>
+        </Label>
+        <Button fx:id="confirmButton" layoutX="1021.0" layoutY="304.0" mnemonicParsing="false" onAction="#confirm"
+                onMouseEntered="#cTurnOrange" onMouseExited="#cTurnWhite" prefHeight="30.0" prefWidth="185.0"
+                style="-fx-background-color: #ffffff00; -fx-border-color: #ffffffff; -fx-border-width: 1;"
+                text="C  O  N  F  I  R  M" textFill="WHITE">
+            <font>
+                <Font name="PingFang SC Regular" size="14.0"/>
+            </font>
+            <cursor>
+                <Cursor fx:constant="HAND"/>
+            </cursor>
+        </Button>
+        <Label layoutX="128.0" layoutY="151.0" text="开  始  日  期" textFill="#c2bfbf">
+            <font>
+                <Font name="PingFang SC Regular" size="17.0"/>
+            </font>
+        </Label>
+        <Label layoutX="129.0" layoutY="228.0" text="结  束  日  期" textFill="#c2bfbf">
+            <font>
+                <Font name="PingFang SC Regular" size="17.0"/>
+            </font>
+        </Label>
+        <Rectangle arcHeight="5.0" arcWidth="5.0" fill="#689cc4" height="57.0" layoutX="40.0" layoutY="10.0"
+                   stroke="BLACK" strokeType="INSIDE" strokeWidth="0.0" width="5.0"/>
+        <Label layoutX="127.0" layoutY="76.0" text="策  略  类  型" textFill="#c2bfbf">
+            <font>
+                <Font name="PingFang SC Regular" size="17.0"/>
+            </font>
+        </Label>
+        <Label fx:id="strategyLabel" alignment="CENTER" layoutX="83.0" layoutY="100.0" prefHeight="28.0"
+               prefWidth="188.0" text="Label" textFill="WHITE">
+            <font>
+                <Font size="24.0"/>
+            </font>
+        </Label>
+        <Label fx:id="sDateLabel" alignment="CENTER" layoutX="83.0" layoutY="178.0" prefHeight="28.0" prefWidth="188.0"
+               text="Label" textFill="WHITE">
+            <font>
+                <Font size="24.0"/>
+            </font>
+        </Label>
+        <Label fx:id="eDateLabel" alignment="CENTER" layoutX="83.0" layoutY="253.0" prefHeight="28.0" prefWidth="188.0"
+               text="Label" textFill="WHITE">
+            <font>
+                <Font size="24.0"/>
+            </font>
+        </Label>
+        <Button fx:id="backButton" layoutX="85.0" layoutY="303.0" mnemonicParsing="false" onAction="#back"
+                onMouseEntered="#bTurnOrange" onMouseExited="#bTurnWhite" prefHeight="30.0" prefWidth="185.0"
+                style="-fx-background-color: #ffffff00; -fx-border-color: #ffffffff; -fx-border-width: 1;"
+                text="B A C K" textFill="WHITE">
+            <font>
+                <Font name="PingFang SC Regular" size="14.0"/>
+            </font>
+            <cursor>
+                <Cursor fx:constant="HAND"/>
+            </cursor>
+        </Button>
+        <TabPane fx:id="stockTabPane" layoutX="300.0" layoutY="51.0" prefHeight="301.0" prefWidth="679.0"
+                 style="-fx-border-color: #c2bfbf;" stylesheets="@../MyPane.css" tabClosingPolicy="UNAVAILABLE">
+            <tabs>
+                <Tab fx:id="stockPlateTab" text="板块">
+                    <content>
+                        <AnchorPane fx:id="upListPane" minHeight="0.0" minWidth="0.0" prefHeight="1000.0"
+                                    prefWidth="1060.0">
+                            <children>
+                                <Button fx:id="smeBoardButton" layoutX="200.0" layoutY="180.0" mnemonicParsing="false"
+                                        onAction="#selectSMEBoard" onMouseEntered="#smTurnOrange"
+                                        onMouseExited="#smTurnWhite" prefHeight="39.0" prefWidth="280.0"
+                                        style="-fx-background-color: #ffffff00; -fx-border-color: #ffffffff; -fx-border-width: 1; -fx-border-radius: 50;"
+                                        text="中  小  板" textFill="WHITE">
+                                    <font>
+                                        <Font name="PingFang SC Regular" size="14.0"/>
+                                    </font>
+                                    <cursor>
+                                        <Cursor fx:constant="HAND"/>
+                                    </cursor>
+                                </Button>
+                                <Button fx:id="mainBoardButton" layoutX="200.0" layoutY="30.0" mnemonicParsing="false"
+                                        onAction="#selectMainBoard" onMouseEntered="#mTurnOrange"
+                                        onMouseExited="#mTurnWhite" prefHeight="39.0" prefWidth="280.0"
+                                        style="-fx-background-color: #ffffff00; -fx-border-color: #ffffffff; -fx-border-width: 1; -fx-border-radius: 50;"
+                                        text="主  板" textFill="WHITE">
+                                    <font>
+                                        <Font name="PingFang SC Regular" size="14.0"/>
+                                    </font>
+                                    <cursor>
+                                        <Cursor fx:constant="HAND"/>
+                                    </cursor>
+                                </Button>
+                                <Button fx:id="startUpBoardButton" layoutX="200.0" layoutY="105.0"
+                                        mnemonicParsing="false" onAction="#selectStartUpBoard"
+                                        onMouseEntered="#stTurnOrange" onMouseExited="#stTurnWhite" prefHeight="39.0"
+                                        prefWidth="280.0"
+                                        style="-fx-background-color: #ffffff00; -fx-border-color: #ffffffff; -fx-border-width: 1; -fx-border-radius: 50;"
+                                        text="创  业  板" textFill="WHITE">
+                                    <font>
+                                        <Font name="PingFang SC Regular" size="14.0"/>
+                                    </font>
+                                    <cursor>
+                                        <Cursor fx:constant="HAND"/>
+                                    </cursor>
+                                </Button>
+                            </children>
+                        </AnchorPane>
+                    </content>
+                </Tab>
+                <Tab fx:id="跌幅榜" text="股票">
+                    <content>
+                        <AnchorPane fx:id="downListPane" minHeight="0.0" minWidth="0.0" prefHeight="222.0"
+                                    prefWidth="618.0">
+                            <children>
+                                <Label layoutX="16.0" layoutY="12.0" text="                           "
+                                       textFill="#c2bfbf" underline="true" wrapText="true">
+                                    <font>
+                                        <Font name="PingFang SC Regular" size="17.0"/>
+                                    </font>
+                                </Label>
+                                <Rectangle arcHeight="5.0" arcWidth="5.0" fill="#ffb199" height="30.0" layoutX="13.0"
+                                           layoutY="4.0" stroke="BLACK" strokeType="INSIDE" strokeWidth="0.0"
+                                           width="3.0"/>
+                                <CheckBox fx:id="mainCheckBox" layoutX="232.0" layoutY="12.0" mnemonicParsing="false"
+                                          onAction="#selectMain" stylesheets="@../MyCheckBox.css" text="选择所有主板股票"
+                                          textFill="WHITE">
+                                    <font>
+                                        <Font name="PingFang SC Regular" size="13.0"/>
+                                    </font>
+                                </CheckBox>
+                                <CheckBox fx:id="stCheckBox" layoutX="374.0" layoutY="12.0" mnemonicParsing="false"
+                                          onAction="#selectSt" stylesheets="@../MyCheckBox.css" text="选择所有创业板股票"
+                                          textFill="WHITE">
+                                    <font>
+                                        <Font name="PingFang SC Regular" size="13.0"/>
+                                    </font>
+                                </CheckBox>
+                                <CheckBox fx:id="smeCheckBox" layoutX="521.0" layoutY="12.0" mnemonicParsing="false"
+                                          onAction="#selectSme" stylesheets="@../MyCheckBox.css" text="选择所有中小板股票"
+                                          textFill="WHITE">
+                                    <font>
+                                        <Font name="PingFang SC Regular" size="13.0"/>
+                                    </font>
+                                </CheckBox>
+                                <TextField fx:id="stockTextField" layoutX="9.0" layoutY="6.0" prefHeight="32.0"
+                                           promptText="股票ID / 股票名称："
+                                           style="-fx-text-fill: #ffffff; -fx-background-color: #ffffff00;"/>
+                                <ScrollPane fx:id="scrollPane" layoutX="1.0" layoutY="44.0" prefHeight="189.0"
+                                            prefWidth="679.0" style="-fx-background-color: #ffffff00;"
+                                            stylesheets="@../MyScrollPane.css">
+                                    <content>
+                                        <Pane fx:id="stockPane" prefHeight="183.0" prefWidth="645.0">
+                                            <children>
+                                                <Pane fx:id="arrorImage" opacity="0.0" prefHeight="16.0"
+                                                      prefWidth="18.0">
+                                                    <children>
+                                                        <ImageView fitHeight="15.0" fitWidth="24.0" layoutY="1.0"
+                                                                   pickOnBounds="true" preserveRatio="true">
+                                                            <image>
+                                                                <Image url="@../pics/arror.png"/>
+                                                            </image>
+                                                        </ImageView>
+                                                    </children>
+                                                </Pane>
+                                            </children>
+                                        </Pane>
+                                    </content>
+                                </ScrollPane>
+                                <Button fx:id="searchButton" layoutX="164.0" mnemonicParsing="false" onAction="#search"
+                                        prefHeight="27.0" prefWidth="28.0" style="-fx-background-color: #ffffff00;">
+                                    <graphic>
+                                        <ImageView fitHeight="30.0" fitWidth="30.0" pickOnBounds="true"
+                                                   preserveRatio="true">
+                                            <image>
+                                                <Image url="@../pics/search.png"/>
+                                            </image>
+                                        </ImageView>
+                                    </graphic>
+                                    <cursor>
+                                        <Cursor fx:constant="HAND"/>
+                                    </cursor>
+                                </Button>
+                                <ScrollPane fx:id="searchScrollPane" layoutX="16.0" layoutY="33.0" prefHeight="120.0"
+                                            prefWidth="153.0"
+                                            style="-fx-background-color: #00000080; -fx-border-color: #c2bfbf;"
+                                            stylesheets="@../MyScrollPane.css" visible="false">
+                                    <content>
+                                        <Pane fx:id="searchNotificationPane" prefHeight="116.0" prefWidth="126.0">
+                                            <children>
+                                                <Label fx:id="nullLabel" layoutX="52.0" layoutY="49.0" text="无结果"
+                                                       textFill="WHITE"/>
+                                            </children>
+                                        </Pane>
+                                    </content>
+                                </ScrollPane>
+                                <Pane layoutX="137.0" layoutY="235.0" prefHeight="31.0" prefWidth="545.0">
+                                    <children>
+                                        <Button fx:id="randomSelectButton" layoutX="236.0" mnemonicParsing="false"
+                                                onAction="#randomSelect" style="-fx-background-color: #ffffff00;"
+                                                text="随机增加200支股票" textAlignment="CENTER" textFill="#689cc4"
+                                                underline="true">
+                                            <cursor>
+                                                <Cursor fx:constant="HAND"/>
+                                            </cursor>
+                                        </Button>
+                                        <Label fx:id="numOfStocksLabel" layoutX="155.0" layoutY="6.0" text="已选0支股票"
+                                               textFill="WHITE"/>
+                                        <Button fx:id="cancelAllButton" layoutX="451.0" mnemonicParsing="false"
+                                                onAction="#cancelAll" style="-fx-background-color: #ffffff00;"
+                                                text="取消所有选择" textFill="#689cc4" underline="true">
+                                            <cursor>
+                                                <Cursor fx:constant="HAND"/>
+                                            </cursor>
+                                        </Button>
+                                        <Button fx:id="allSelectButton" layoutX="361.0" mnemonicParsing="false"
+                                                onAction="#allSelect" style="-fx-background-color: #ffffff00;"
+                                                text="选择所有股票" textAlignment="CENTER" textFill="#689cc4"
+                                                underline="true">
+                                            <cursor>
+                                                <Cursor fx:constant="HAND"/>
+                                            </cursor>
+                                        </Button>
+                                    </children>
+                                </Pane>
+                            </children>
+                        </AnchorPane>
+                    </content>
+                </Tab>
+            </tabs>
+        </TabPane>
+        <Pane fx:id="momentumPane" layoutX="1014.0" layoutY="-10.0" prefHeight="301.0" prefWidth="226.0"
+              visible="false">
+            <children>
+                <Label layoutX="17.0" layoutY="130.0" text="                           " textFill="#c2bfbf"
+                       underline="true" wrapText="true">
+                    <font>
+                        <Font name="PingFang SC Regular" size="17.0"/>
+                    </font>
+                </Label>
+                <Label layoutX="18.0" layoutY="230.0" text="                           " textFill="#c2bfbf"
+                       underline="true" wrapText="true">
+                    <font>
+                        <Font name="PingFang SC Regular" size="17.0"/>
+                    </font>
+                </Label>
+                <Rectangle arcHeight="5.0" arcWidth="5.0" fill="#ffb199" height="30.0" layoutX="14.0" layoutY="122.0"
+                           stroke="BLACK" strokeType="INSIDE" strokeWidth="0.0" width="3.0"/>
+                <TextField fx:id="momentumFormativePeriod" layoutX="17.0" layoutY="121.0" prefHeight="32.0"
+                           promptText="形成期：" style="-fx-text-fill: #ffffff; -fx-background-color: #ffffff00;"/>
+                <Rectangle arcHeight="5.0" arcWidth="5.0" fill="#ffb199" height="30.0" layoutX="15.0" layoutY="221.0"
+                           stroke="BLACK" strokeType="INSIDE" strokeWidth="0.0" width="3.0"/>
+                <TextField fx:id="momentumHoldingPeriod" layoutX="18.0" layoutY="220.0" prefHeight="32.0"
+                           promptText="持有期：" style="-fx-text-fill: #ffffff; -fx-background-color: #ffffff00;"/>
+                <Label layoutX="62.0" layoutY="98.0" text="形  成  期" textFill="#c2bfbf">
+                    <font>
+                        <Font name="PingFang SC Regular" size="17.0"/>
+                    </font>
+                </Label>
+                <Label layoutX="62.0" layoutY="197.0" text="持  有  期" textFill="#c2bfbf">
+                    <font>
+                        <Font name="PingFang SC Regular" size="17.0"/>
+                    </font>
+                </Label>
+            </children>
+        </Pane>
+        <Pane fx:id="meanPane" layoutX="1014.0" layoutY="-10.0" prefHeight="301.0" prefWidth="226.0" visible="false">
+            <children>
+                <Label layoutX="14.0" layoutY="125.0" text="                           " textFill="#c2bfbf"
+                       underline="true" wrapText="true">
+                    <font>
+                        <Font name="PingFang SC Regular" size="17.0"/>
+                    </font>
+                </Label>
+                <Label layoutX="14.0" layoutY="202.0" text="                           " textFill="#c2bfbf"
+                       underline="true" wrapText="true">
+                    <font>
+                        <Font name="PingFang SC Regular" size="17.0"/>
+                    </font>
+                </Label>
+                <Label layoutX="12.0" layoutY="278.0" text="                           " textFill="#c2bfbf"
+                       underline="true" wrapText="true">
+                    <font>
+                        <Font name="PingFang SC Regular" size="17.0"/>
+                    </font>
+                </Label>
+                <Rectangle arcHeight="5.0" arcWidth="5.0" fill="#ffb199" height="30.0" layoutX="11.0" layoutY="117.0"
+                           stroke="BLACK" strokeType="INSIDE" strokeWidth="0.0" width="3.0"/>
+                <TextField fx:id="meanHoldingPeriod" layoutX="14.0" layoutY="117.0" prefHeight="32.0" promptText="持有期："
+                           style="-fx-text-fill: #ffffff; -fx-background-color: #ffffff00;"/>
+                <Rectangle arcHeight="5.0" arcWidth="5.0" fill="#ffb199" height="30.0" layoutX="12.0" layoutY="195.0"
+                           stroke="BLACK" strokeType="INSIDE" strokeWidth="0.0" width="3.0"/>
+                <TextField fx:id="meanMostNumOfStock1" layoutX="15.0" layoutY="195.0" prefHeight="32.0"
+                           promptText="最多持仓股票数目：" style="-fx-text-fill: #ffffff; -fx-background-color: #ffffff00;"/>
+                <Label layoutX="59.0" layoutY="93.0" text="持  有  期" textFill="#c2bfbf">
+                    <font>
+                        <Font name="PingFang SC Regular" size="17.0"/>
+                    </font>
+                </Label>
+                <Label layoutX="10.0" layoutY="168.0" text="最 多 持 仓 股 票 数 目" textFill="#c2bfbf">
+                    <font>
+                        <Font name="PingFang SC Regular" size="17.0"/>
+                    </font>
+                </Label>
+                <Label layoutX="47.0" layoutY="245.0" text="均  线  种  类" textFill="#c2bfbf">
+                    <font>
+                        <Font name="PingFang SC Regular" size="17.0"/>
+                    </font>
+                </Label>
+                <ChoiceBox fx:id="meanTypeChoiceBox1" layoutX="13.0" layoutY="270.0" prefHeight="30.0" prefWidth="170.0"
+                           style="-fx-background-color: #ffffff00;" stylesheets="@../MyChoiceBox.css"/>
+                <Rectangle arcHeight="5.0" arcWidth="5.0" fill="#ffb199" height="30.0" layoutX="10.0" layoutY="270.0"
+                           stroke="BLACK" strokeType="INSIDE" strokeWidth="0.0" width="3.0"/>
+            </children>
+        </Pane>
+        <Label layoutX="576.0" layoutY="76.0" text="*选择一个板块或自选至少100支股票" textFill="WHITE"/>
+        <Pane fx:id="momentumPeriodPane" layoutX="1014.0" layoutY="-10.0" prefHeight="301.0" prefWidth="226.0"
+              visible="false">
+            <children>
+                <Label layoutX="17.0" layoutY="198.0" text="                           " textFill="#c2bfbf"
+                       underline="true" wrapText="true">
+                    <font>
+                        <Font name="PingFang SC Regular" size="17.0"/>
+                    </font>
+                </Label>
+                <Rectangle arcHeight="5.0" arcWidth="5.0" fill="#ffb199" height="30.0" layoutX="14.0" layoutY="190.0"
+                           stroke="BLACK" strokeType="INSIDE" strokeWidth="0.0" width="3.0"/>
+                <TextField fx:id="periodTextField" layoutX="17.0" layoutY="189.0" prefHeight="32.0" promptText="形成期："
+                           style="-fx-text-fill: #ffffff; -fx-background-color: #ffffff00;"/>
+                <Label fx:id="periodLabel" layoutX="62.0" layoutY="166.0" text="形  成  期" textFill="#c2bfbf">
+                    <font>
+                        <Font name="PingFang SC Regular" size="17.0"/>
+                    </font>
+                </Label>
+            </children>
+        </Pane>
+        <Pane fx:id="meanPeriodPane" layoutX="1014.0" layoutY="-10.0" prefHeight="301.0" prefWidth="226.0"
+              visible="false">
+            <children>
+                <Label layoutX="18.0" layoutY="142.0" text="                           " textFill="#c2bfbf"
+                       underline="true" wrapText="true">
+                    <font>
+                        <Font name="PingFang SC Regular" size="17.0"/>
+                    </font>
+                </Label>
+                <Rectangle arcHeight="5.0" arcWidth="5.0" fill="#ffb199" height="30.0" layoutX="16.0" layoutY="135.0"
+                           stroke="BLACK" strokeType="INSIDE" strokeWidth="0.0" width="3.0"/>
+                <TextField fx:id="meanMostNumOfStock" layoutX="19.0" layoutY="135.0" prefHeight="32.0"
+                           promptText="最多持仓股票数目：" style="-fx-text-fill: #ffffff; -fx-background-color: #ffffff00;"/>
+                <Label layoutX="14.0" layoutY="108.0" text="最 多 持 仓 股 票 数 目" textFill="#c2bfbf">
+                    <font>
+                        <Font name="PingFang SC Regular" size="17.0"/>
+                    </font>
+                </Label>
+                <Label layoutX="17.0" layoutY="231.0" text="                           " textFill="#c2bfbf"
+                       underline="true" wrapText="true">
+                    <font>
+                        <Font name="PingFang SC Regular" size="17.0"/>
+                    </font>
+                </Label>
+                <Label layoutX="52.0" layoutY="198.0" text="均  线  种  类" textFill="#c2bfbf">
+                    <font>
+                        <Font name="PingFang SC Regular" size="17.0"/>
+                    </font>
+                </Label>
+                <ChoiceBox fx:id="meanTypeChoiceBox" layoutX="18.0" layoutY="223.0" prefHeight="30.0" prefWidth="170.0"
+                           style="-fx-background-color: #ffffff00;" stylesheets="@../MyChoiceBox.css"/>
+                <Rectangle arcHeight="5.0" arcWidth="5.0" fill="#ffb199" height="30.0" layoutX="15.0" layoutY="223.0"
+                           stroke="BLACK" strokeType="INSIDE" strokeWidth="0.0" width="3.0"/>
+            </children>
+        </Pane>
+    </children>
+</Pane>

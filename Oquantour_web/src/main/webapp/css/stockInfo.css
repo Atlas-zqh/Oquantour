@@ -1,0 +1,325 @@
+* {
+    box-sizing: border-box;
+}
+
+body {
+    margin: 0;
+    font-family: "PingFang SC", serif;
+}
+
+.tableHead {
+    font-size: 13px;
+    color: #acacac;
+}
+
+.tableContent {
+    color: #6a6a6a;
+    font-size: 16px;
+    font-weight: 300;
+}
+
+* input {
+    color: #535353;
+}
+
+* input:focus {
+    outline: 0;
+}
+
+* button:focus {
+    outline: 0;
+}
+
+a {
+    color: #848484;
+    font-weight: 300;
+    text-decoration: none;
+    font-size: 18px;
+}
+
+a:hover {
+    color: #95a6b3;
+}
+
+a:focus {
+    outline: none;
+}
+
+button {
+    outline: none;
+    box-shadow: none;
+    -webkit-box-shadow: none;
+}
+
+.nav-tabs {
+    border: none;
+}
+
+.nav > li > a {
+    position: relative;
+    display: block;
+    padding: 3px 20px;
+    border: none;
+}
+
+.nav-tabs > li.active > a, .nav-tabs > li.active > a:focus, .nav-tabs > li.active > a:hover {
+    color: #fff;
+    cursor: default;
+    background-color: #95a6b3;
+    border: none;
+    border-bottom-color: transparent;
+    font-weight: 300;
+    font-size: 18px;
+}
+
+#myTabContent {
+    border: solid 1px #f1f1f1;
+}
+
+.nav .open > a, .nav .open > a:focus, .nav .open > a:hover {
+    background-color: #eee;
+    border-color: #ADC7C4;
+    color: #ADC7C4;
+}
+
+#quotesTab {
+    background: none;
+    color: #8a8a8a;
+    padding: 3px 40px 3px 0;
+    font-weight: 300;
+}
+
+#searchTab {
+    background: none;
+    color: #8a8a8a;
+    padding: 3px 40px 3px 0;
+    font-weight: 300;
+}
+
+.searchDiv {
+    width: 1100px;
+    height: auto;
+    /*padding: 30px;*/
+    margin-top: 40px;
+    /*box-shadow: 0 2px 10px 5px #dadada;*/
+    /*text-align: center;*/
+}
+
+.searchTip {
+    text-align: left;
+    font-weight: 400;
+    font-size: 22px;
+    color: #A4A4A4;
+}
+
+.searchForm {
+    height: 35px;
+    line-height: 1.5em;
+    width: 100%;
+    border: solid 1px #c1c1c1;
+    font-size: 16px;
+}
+
+#searchButton {
+    background-color: #95a6b3;
+    border-width: 0;
+    font-size: 15px;
+    font-weight: lighter;
+    letter-spacing: 25px;
+    text-indent: 25px;
+    color: #ffffff;
+    text-decoration: none;
+    text-align: center;
+    /*padding: 0.5%;*/
+    padding: 5px 2px;
+    width: 100%;
+    height: 35px;
+}
+
+#searchButton:hover {
+    cursor: pointer;
+    background-color: #a7bac9;
+}
+
+.otherInfoDiv {
+    width: 1100px;
+    height: 800px;
+    /*padding: 30px;*/
+    margin-top: 60px;
+    margin-bottom: 60px;
+    /*box-shadow: 0 2px 10px 5px #dadada;*/
+    /*text-align: center;*/
+}
+
+.marketIndexDiv {
+    display: inline-block;
+    vertical-align: top;
+    width: 670px;
+    height: 500px;
+    box-shadow: 0 2px 10px 5px #dadada;
+    padding: 30px;
+}
+
+.rankListDiv {
+    display: inline-block;
+    vertical-align: top;
+    width: 300px;
+    height: 500px;
+    box-shadow: 0 2px 10px 5px #dadada;
+    margin-left: 30px;
+    padding: 30px;
+}
+
+.selectPlateDiv {
+    margin-top: 10px;
+}
+
+.selectPlateButton {
+    font-weight: 400;
+    font-size: 18px;
+    color: #95a6b3;
+    border: none;
+    background-color: #FFFFFF;
+    padding: 0;
+    margin-right: 40px;
+}
+
+.rankListDiv button:hover {
+    cursor: pointer;
+    color: #D1A5A5;
+}
+
+.rankListTable {
+    margin-top: 5px;
+    border-spacing: 8px;
+    border-left: solid 1px #D1A5A5;
+    border-collapse: separate;
+}
+
+.firstRankNum {
+    color: #BE6D6D;
+    font-weight: 400;
+    font-size: 22px;
+}
+
+.rankNum {
+    color: #b4b4b4;
+    font-weight: 300;
+    font-size: 18px;
+}
+
+.firstRankStock {
+    color: #D1A5A5;
+    font-weight: 400;
+    font-size: 20px;
+    text-decoration: none;
+}
+
+.rankStock {
+    color: #b4b4b4;
+    font-weight: 300;
+    font-size: 16px;
+    text-decoration: none;
+}
+
+.ui.search > .results > .message .header {
+    display: none;
+}
+
+.ui.search > .results .result .title {
+    margin: -.14285714em 0 0;
+    font-family: "PingFang SC", serif;
+    font-weight: normal;
+    font-size: 1em;
+    color: #848484;
+}
+
+.ui.search > .results .result .title:hover {
+    color: #383838;
+}
+
+input[type=text], input[type=email], input[type=search], input[type=password] {
+    -webkit-appearance: textfield;
+}
+
+.mdl-tooltip {
+    background: #919191;
+    font-size: 14px;
+    font-weight: normal;
+    line-height: 20px;
+}
+
+.mdl-button--fab.mdl-button--mini-fab {
+    height: 30px;
+    min-width: 30px;
+    width: 30px;
+}
+
+#addOptionalButton {
+    border: none;
+    background-color: #95a6b3;
+    color: white;
+    width: 70px;
+    height: auto;
+}
+
+.select2-container .select2-selection--single {
+    height: 40px;
+}
+
+.select2-container--default .select2-selection--single .select2-selection__rendered {
+    color: #7a7a7a;
+    line-height: 38px;
+    font-size: 16px;
+}
+
+.select2-container--default .select2-selection--single .select2-selection__arrow {
+    height: 35px;
+}
+
+.select2-container .select2-selection--single {
+    outline: none;
+}
+
+.select2-container--default .select2-results__option--highlighted[aria-selected] {
+    background-color: #c9c9c9;
+    color: white;
+}
+
+.mdl-progress.mdl-progress--indeterminate > .bar1, .mdl-progress.mdl-progress__indeterminate > .bar1, .mdl-progress.mdl-progress--indeterminate > .bar3, .mdl-progress.mdl-progress__indeterminate > .bar3 {
+    background-color: #95a6b3;
+}
+
+.mdl-progress > .bufferbar {
+    width: 100%;
+    background: #eeeeee none;
+}
+
+.mdl-progress:not(.mdl-progress--indeterminate):not(.mdl-progress--indeterminate) > .auxbar, .mdl-progress:not(.mdl-progress__indeterminate):not(.mdl-progress__indeterminate) > .auxbar {
+    width: 0;
+    background-color: #eeeeee;
+}
+
+.nav-pills > li > a {
+    padding: 10px 20px;
+}
+
+.nav-pills > li.active > a, .nav-pills > li.active > a:focus, .nav-pills > li.active > a:hover {
+    background-color: #95a6b3;
+}
+
+#g-chart1 {
+    width: 100%;
+    height: 450px;
+}
+
+#currentStock {
+    font-size: 30px;
+    font-weight: normal;
+    color: #95a6b3;
+}
+
+#topRankTable tr th {
+    font-size: 16px;
+    font-weight: normal;
+}

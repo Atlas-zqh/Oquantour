@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE struts PUBLIC
+        "-//Apache Software Foundation//DTD Struts Configuration 2.1.7//EN"
+        "http://struts.apache.org/dtds/struts-2.1.7.dtd">
+<struts>
+    <package name="backTest" extends="json-default,struts-default">
+        <action name="backTest" class="oquantour.action.BackTestAction" method="backTest">
+            <result type="json">
+                <param name="root">result</param>
+            </result>
+        </action>
+    </package>
+</struts>

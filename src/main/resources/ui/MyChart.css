@@ -1,0 +1,328 @@
+/*******************************************************************************
+ *                                                                             *
+ * Charts                                                                      *
+ *                                                                             *
+ ******************************************************************************/
+
+.chart {
+    -fx-padding: 5px;
+    -fx-background-color: #ffffff00;
+}
+
+.chart-plot-background {
+    -fx-background-color: #ffffff00;
+    /*derive(-fx-base, 26.4%);*/
+}
+
+.chart-content {
+    -fx-padding: 5px;
+    -fx-text-fill: red;
+}
+
+.chart-title {
+    -fx-font-size: 1.4em;
+    -fx-text-fill: #689cc4;
+}
+
+.chart-legend {
+    -fx-background-color: #cbcbcb;
+    /*-fx-shadow-highlight-color,*/
+    /*linear-gradient(to bottom, derive(-fx-background, -10%), derive(-fx-background, -5%)),*/
+    /*linear-gradient(from 0px 0px to 0px 4px, derive(-fx-background, -4%), derive(-fx-background, 10%));*/
+    -fx-background-insets: 0 0 -1 0, 0, 1;
+    -fx-background-radius: 4, 4, 3;
+    -fx-padding: 6px;
+}
+
+/*******************************************************************************
+ *                                                                             *
+ * Axis                                                                        *
+ *                                                                             *
+ ******************************************************************************/
+
+.axis {
+    AXIS_COLOR: #a8a8a8;
+    /*derive(derive(-fx-base, 26.4%), -20%);*/
+    -fx-tick-label-font-size: 0.833333em; /* 10px */
+    -fx-tick-label-fill: #a8a8a8;
+    /*derive(-fx-text-background-color, 30%);*/
+}
+
+.axis:top {
+    -fx-border-color: transparent transparent AXIS_COLOR transparent;
+}
+
+.axis:right {
+    -fx-border-color: transparent transparent transparent AXIS_COLOR;
+}
+
+.axis:bottom {
+    -fx-border-color: AXIS_COLOR transparent transparent transparent;
+}
+
+.axis:left {
+    -fx-border-color: transparent AXIS_COLOR transparent transparent;
+}
+
+.axis:top > .axis-label,
+.axis:left > .axis-label {
+    -fx-padding: 0 0 4px 0;
+}
+
+.axis:bottom > .axis-label,
+.axis:right > .axis-label {
+    -fx-padding: 4px 0 0 0;
+}
+
+.axis-tick-mark,
+.axis-minor-tick-mark {
+    -fx-fill: null;
+    -fx-stroke: AXIS_COLOR;
+}
+
+/*******************************************************************************
+ *                                                                             *
+ * ChartPlot                                                                   *
+ *                                                                             *
+ ******************************************************************************/
+
+.chart-vertical-grid-lines {
+    -fx-stroke: #ddd9de;
+    /*derive(-fx-background, -10%);*/
+    -fx-stroke-dash-array: 0.3em, 0.3em;
+}
+
+.chart-horizontal-grid-lines {
+    -fx-stroke: #ddd9de;
+    /*derive(-fx-background, -10%);*/
+    -fx-stroke-dash-array: 0.3em, 0.3em;
+}
+
+.chart-alternative-column-fill {
+    -fx-fill: null;
+    -fx-stroke: null;
+}
+
+.chart-alternative-row-fill {
+    -fx-fill: null;
+    -fx-stroke: null;
+}
+
+.chart-vertical-zero-line,
+.chart-horizontal-zero-line {
+    -fx-stroke: derive(-fx-text-background-color, 40%);
+}
+
+/*******************************************************************************
+ *                                                                             *
+ * BarChart                                                                    *
+ *                                                                             *
+ ******************************************************************************/
+.default-color0.chart-bar {
+
+    -fx-bar-fill: #7dbbfb;
+    -fx-background-color: -fx-bar-fill;
+}
+
+.default-color1.chart-bar {
+
+    -fx-bar-fill: #fba71b;
+
+}
+
+.default-color0.chart-bar-symbol {
+    -fx-background-color: #7dbbfb;
+}
+
+.default-color1.chart-bar-symbol {
+    -fx-background-color: #fba71b;
+}
+
+.bar-legend-symbol {
+    -fx-padding: 8px;
+}
+
+/*******************************************************************************
+ *                                                                             *
+ * LineChart                                                                     *
+ *                                                                             *
+ ******************************************************************************/
+
+.chart-line-symbol {
+    -fx-background-color: #f3622d, white;
+    -fx-background-insets: 0, 2;
+    -fx-background-radius: 5px;
+    -fx-padding: 5px;
+}
+
+.chart-series-line {
+    -fx-stroke: #f3622d;
+    -fx-stroke-width: 3px;
+}
+
+.default-color0.chart-line-symbol {
+    -fx-background-color: #7dbbfb;
+}
+
+.default-color1.chart-line-symbol {
+    -fx-background-color: #fba71b;
+}
+
+.default-color2.chart-line-symbol {
+    -fx-background-color: #57b757, white;
+}
+
+.default-color3.chart-line-symbol {
+    -fx-background-color: #41a9c9, white;
+}
+
+.default-color0.chart-series-line {
+    -fx-stroke: #7dbbfb;
+}
+
+.default-color1.chart-series-line {
+    -fx-stroke: #fba71b;
+}
+
+.default-color2.chart-series-line {
+    -fx-stroke: #57b757;
+}
+
+.default-color3.chart-series-line {
+    -fx-stroke: #41a9c9;
+}
+
+/*******************************************************************************
+ *                                                                             *
+ * PieChart                                                                    *
+ *                                                                             *
+ ******************************************************************************/
+
+.chart-pie {
+    -fx-pie-color: #f3622d;
+    -fx-background-color: -fx-pie-color;
+    /*radial-gradient(radius 100%, derive(-fx-pie-color,20%), derive(-fx-pie-color,-10%));*/
+    -fx-background-insets: 3;
+    -fx-border-color: #ffffff00;
+    /*-fx-border-width: 5px;*/
+}
+
+.chart-pie-label {
+    -fx-padding: 3px;
+    -fx-fill: white;
+    -fx-font-family: PingFang SC;
+    /*-fx-text-base-color;*/
+}
+
+.chart-pie-label-line {
+    -fx-stroke: white;
+    /*derive(-fx-background,-20%);*/
+}
+
+.default-color0.chart-pie {
+    -fx-pie-color: #cf5b5c;
+}
+
+.default-color1.chart-pie {
+    -fx-pie-color: #6cb174;
+}
+
+.default-color2.chart-pie {
+    -fx-pie-color: #727272;
+}
+
+.default-color3.chart-pie {
+    -fx-pie-color: #41a9c9;
+}
+
+.default-color4.chart-pie {
+    -fx-pie-color: #4258c9;
+}
+
+.default-color5.chart-pie {
+    -fx-pie-color: #9a42c8;
+}
+
+.default-color6.chart-pie {
+    -fx-pie-color: #c84164;
+}
+
+.default-color7.chart-pie {
+    -fx-pie-color: #888888;
+}
+
+.negative.chart-pie {
+    -fx-pie-color: transparent;
+    -fx-background-color: red;
+}
+
+.pie-legend-symbol.chart-pie {
+    -fx-background-radius: 8px;
+    -fx-padding: 8px;
+    -fx-border-color: null;
+}
+
+/*******************************************************************************
+ *                                                                             *
+ * AreaChart                                                                    *
+ *                                                                             *
+ ******************************************************************************/
+
+.chart-area-symbol {
+    -fx-background-color: #fba71b, white;
+    -fx-background-insets: 0, 2;
+    -fx-background-radius: 5px;
+    -fx-padding: 5px;
+}
+
+.chart-series-area-line {
+    -fx-stroke: #fba71b;
+    -fx-stroke-width: 3px;
+}
+
+.default-color0.chart-series-area-line {
+    -fx-stroke: CHART_COLOR_1;
+}
+
+.default-color1.chart-series-area-line {
+    -fx-stroke: CHART_COLOR_2;
+}
+
+.default-color2.chart-series-area-line {
+    -fx-stroke: CHART_COLOR_3;
+}
+
+.default-color0.chart-area-symbol {
+    -fx-background-color: CHART_COLOR_1;
+}
+
+.default-color1.chart-area-symbol {
+    -fx-background-color: CHART_COLOR_2;
+}
+
+.default-color2.chart-area-symbol {
+    -fx-background-color: CHART_COLOR_3;
+}
+
+.chart-series-area-fill {
+    -fx-stroke: null;
+    -fx-fill: CHART_COLOR_1_TRANS_20;
+}
+
+.default-color0.chart-series-area-fill {
+    -fx-fill: CHART_COLOR_1_TRANS_20;
+}
+
+.default-color1.chart-series-area-fill {
+    -fx-fill: CHART_COLOR_2_TRANS_20;
+}
+
+.default-color2.chart-series-area-fill {
+    -fx-fill: CHART_COLOR_3_TRANS_20;
+}
+
+.area-legend-symbol {
+    -fx-padding: 6px;
+    -fx-background-radius: 10px; /* makes sure this remains circular */
+    -fx-background-insets: 3;
+}

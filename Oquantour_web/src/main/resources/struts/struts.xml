@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE struts PUBLIC
+        "-//Apache Software Foundation//DTD Struts Configuration 2.3//EN"
+        "http://struts.apache.org/dtds/struts-2.3.dtd">
+<struts>
+    <constant name="struts.devMode" value="false"/>
+    <constant name="struts.objectFactory" value="spring"/>
+    <include file="struts/userAuth.xml"/>
+    <include file="struts/stock.xml"/>
+    <include file="struts/backTest.xml"/>
+    <include file="struts/market.xml"/>
+    <include file="struts/optionStock.xml"/>
+    <include file="struts/industry.xml"/>
+    <include file="struts/userCombine.xml"/>
+</struts>

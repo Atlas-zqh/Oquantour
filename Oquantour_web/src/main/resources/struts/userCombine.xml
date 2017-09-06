@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE struts PUBLIC
+        "-//Apache Software Foundation//DTD Struts Configuration 2.1.7//EN"
+        "http://struts.apache.org/dtds/struts-2.1.7.dtd">
+<struts>
+    <package name="addPortfolio" extends="json-default,struts-default">
+        <action name="addPortfolio" class="oquantour.action.userCombineAction" method="addPortfolio">
+            <result type="json">
+                <param name="root">result</param>
+            </result>
+        </action>
+
+        <action name="getAllPortfolios" class="oquantour.action.userCombineAction" method="getAllPortfolios">
+            <result type="json">
+                <param name="root">result</param>
+            </result>
+        </action>
+
+        <action name="getPortfolio" class="oquantour.action.userCombineAction" method="getPortfolio">
+            <result type="json">
+                <param name="root">result</param>
+            </result>
+        </action>
+        <action name="getCurrentStocks" class="oquantour.action.userCombineAction" method="getCurrentStocks">
+            <result type="json">
+                <param name="root">result</param>
+            </result>
+        </action>
+        <action name="deletePortfolio" class="oquantour.action.userCombineAction" method="deletePortfolio">
+            <result type="json">
+                <param name="root">result</param>
+            </result>
+        </action>
+
+    </package>
+</struts>

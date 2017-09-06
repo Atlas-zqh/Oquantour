@@ -1,0 +1,226 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.Cursor?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.ScrollPane?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.Pane?>
+<?import javafx.scene.shape.Line?>
+<?import javafx.scene.shape.Rectangle?>
+<?import javafx.scene.text.Font?>
+
+<Pane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="720.0"
+      prefWidth="1280.0" xmlns="http://javafx.com/javafx/8.0.111" xmlns:fx="http://javafx.com/fxml/1"
+      fx:controller="ui.MainViewController">
+    <children>
+        <ImageView fitHeight="720.0" fitWidth="1280.0" pickOnBounds="true" preserveRatio="true">
+            <image>
+                <Image url="@pics/background2.png"/>
+            </image>
+        </ImageView>
+        <Button fx:id="searchButton" layoutX="681.0" layoutY="67.0" mnemonicParsing="false" onAction="#searchSingle"
+                onMouseEntered="#sTurnRed" onMouseExited="#sTurnWhite" style="-fx-background-color: #ffffff00;"
+                text="SEARCH" textFill="#1f5686">
+            <font>
+                <Font name="PingFang SC Regular" size="18.0"/>
+            </font>
+            <cursor>
+                <Cursor fx:constant="HAND"/>
+            </cursor>
+        </Button>
+        <Button fx:id="compareButton" layoutX="776.0" layoutY="67.0" mnemonicParsing="false" onAction="#compareTwo"
+                onMouseEntered="#cTurnRed" onMouseExited="#cTurnWhite" style="-fx-background-color: #ffffff00;"
+                text="COMPARE" textFill="#1f5686">
+            <font>
+                <Font name="PingFang SC Regular" size="18.0"/>
+            </font>
+            <cursor>
+                <Cursor fx:constant="HAND"/>
+            </cursor>
+        </Button>
+        <Button fx:id="marketButton" layoutX="890.0" layoutY="67.0" mnemonicParsing="false" onAction="#searchMarket"
+                onMouseEntered="#mTurnRed" onMouseExited="#mTurnWhite" style="-fx-background-color: #ffffff00;"
+                text="MARKET" textFill="#1f5686">
+            <font>
+                <Font name="PingFang SC Regular" size="18.0"/>
+            </font>
+            <cursor>
+                <Cursor fx:constant="HAND"/>
+            </cursor>
+        </Button>
+        <Line endX="100.0" layoutX="1188.0" layoutY="86.0" rotate="90.0" startX="50.0" stroke="#1f5686"
+              strokeWidth="4.0"/>
+        <Button fx:id="closeButton" layoutX="1240.0" layoutY="4.0" mnemonicParsing="false" onAction="#close"
+                prefHeight="20.0" prefWidth="20.0" style="-fx-background-color: #ffffff00;">
+            <graphic>
+                <ImageView fitHeight="20.0" fitWidth="20.0" pickOnBounds="true" preserveRatio="true">
+                    <image>
+                        <Image url="@pics/关闭-2.png"/>
+                    </image>
+                </ImageView>
+            </graphic>
+            <cursor>
+                <Cursor fx:constant="HAND"/>
+            </cursor>
+        </Button>
+        <Label fx:id="introLabel1" alignment="TOP_RIGHT" layoutX="9.0" layoutY="605.0" prefHeight="20.0"
+               prefWidth="1222.0" text="Find interactive charts, historical information and" textAlignment="RIGHT"
+               textFill="#689cc4" wrapText="true">
+            <font>
+                <Font name="PingFang SC Regular" size="23.0"/>
+            </font>
+        </Label>
+        <Label fx:id="introLabel2" alignment="TOP_RIGHT" layoutX="167.0" layoutY="635.0" prefHeight="0.0"
+               prefWidth="1065.0" text="stock analysis on all A shares in China." textAlignment="RIGHT"
+               textFill="#689cc4" wrapText="true">
+            <font>
+                <Font name="PingFang SC Regular" size="23.0"/>
+            </font>
+        </Label>
+        <Button fx:id="backButton" layoutX="52.0" layoutY="636.0" mnemonicParsing="false" onAction="#back"
+                style="-fx-background-color: #ffffff00;">
+            <graphic>
+                <ImageView fitHeight="41.0" fitWidth="41.0" pickOnBounds="true" preserveRatio="true">
+                    <image>
+                        <Image url="@pics/箭头左.png"/>
+                    </image>
+                </ImageView>
+            </graphic>
+            <cursor>
+                <Cursor fx:constant="HAND"/>
+            </cursor>
+        </Button>
+        <Button fx:id="nextButton" layoutX="149.0" layoutY="636.0" mnemonicParsing="false" onAction="#next"
+                style="-fx-background-color: #ffffff00;">
+            <graphic>
+                <ImageView fitHeight="41.0" fitWidth="41.0" pickOnBounds="true" preserveRatio="true" rotate="180.0">
+                    <image>
+                        <Image url="@pics/箭头左.png"/>
+                    </image>
+                </ImageView>
+            </graphic>
+            <cursor>
+                <Cursor fx:constant="HAND"/>
+            </cursor>
+        </Button>
+        <ImageView fx:id="mainPic" fitHeight="406.0" fitWidth="1280.0" layoutY="131.0" pickOnBounds="true"
+                   preserveRatio="true">
+            <image>
+                <Image url="@pics/banner3.png"/>
+            </image>
+        </ImageView>
+        <Pane fx:id="inputPane" layoutY="130.0" prefHeight="405.0" prefWidth="1280.0"/>
+        <Pane fx:id="loadingPane" layoutY="720.0" opacity="0.8" prefHeight="406.0" prefWidth="1280.0"
+              style="-fx-background-color: #74bfc9;">
+            <children>
+                <ImageView fitHeight="380.0" fitWidth="544.0" layoutX="380.0" pickOnBounds="true" preserveRatio="true">
+                    <image>
+                        <Image url="@pics/loading.gif"/>
+                    </image>
+                </ImageView>
+                <Pane fx:id="waitingPane1" layoutX="470.0" layoutY="200.0" prefHeight="200.0" prefWidth="350.0"
+                      visible="false">
+                    <children>
+                        <ImageView fitHeight="200.0" fitWidth="300.0" layoutX="170.0" layoutY="40.0" pickOnBounds="true"
+                                   preserveRatio="true">
+                            <image>
+                                <Image url="@pics/loading2.gif"/>
+                            </image>
+                        </ImageView>
+                        <ImageView fitHeight="200.0" fitWidth="300.0" layoutX="-140.0" layoutY="40.0"
+                                   pickOnBounds="true" preserveRatio="true">
+                            <image>
+                                <Image url="@pics/loading2.gif"/>
+                            </image>
+                        </ImageView>
+                        <Label layoutX="40.0" layoutY="50.0" text="算得有点久 请耐心等候" textFill="#eeeeed">
+                            <font>
+                                <Font size="23.0"/>
+                            </font>
+                        </Label>
+                    </children>
+                </Pane>
+                <Rectangle arcHeight="5.0" arcWidth="5.0" fill="#00000098" height="406.0" opacity="0.2" stroke="WHITE"
+                           strokeType="INSIDE" strokeWidth="0.0" width="1280.0"/>
+            </children>
+        </Pane>
+        <Label layoutX="289.0" layoutY="473.0" prefHeight="120.0" prefWidth="499.0" text="Oquantour" textFill="#689cc4">
+            <font>
+                <Font name="PingFang SC Medium" size="96.0"/>
+            </font>
+        </Label>
+        <Button fx:id="homeButton" layoutX="608.0" layoutY="67.0" mnemonicParsing="false" onAction="#backToHome"
+                onMouseEntered="#hTurnRed" onMouseExited="#hTurnWhite" style="-fx-background-color: #ffffff00;"
+                text="HOME" textFill="#1f5686">
+            <font>
+                <Font name="PingFang SC Regular" size="18.0"/>
+            </font>
+            <cursor>
+                <Cursor fx:constant="HAND"/>
+            </cursor>
+        </Button>
+        <ScrollPane fx:id="scrollPane" layoutY="720.0" prefHeight="590.0" prefWidth="1280.0" stylesheets="@MyPane.css">
+            <content>
+                <Pane fx:id="contentPane" prefHeight="580.0" prefWidth="1250.0"
+                      style="-fx-background-color: #ffffff00;"/>
+            </content>
+        </ScrollPane>
+        <Button fx:id="backtestButton" layoutX="989.0" layoutY="68.0" mnemonicParsing="false" onAction="#backTest"
+                onMouseEntered="#bTurnRed" onMouseExited="#bTurnWhite" style="-fx-background-color: #ffffff00;"
+                text="BACKTEST" textFill="#1f5686">
+            <font>
+                <Font name="PingFang SC Regular" size="18.0"/>
+            </font>
+            <cursor>
+                <Cursor fx:constant="HAND"/>
+            </cursor>
+        </Button>
+        <Button fx:id="bestperiodButton" layoutX="1107.0" layoutY="68.0" mnemonicParsing="false" onAction="#bestPeriod"
+                onMouseEntered="#beTurnRed" onMouseExited="#beTurnWhite" style="-fx-background-color: #ffffff00;"
+                text="BESTPERIOD" textFill="#1f5686">
+            <font>
+                <Font name="PingFang SC Regular" size="18.0"/>
+            </font>
+            <cursor>
+                <Cursor fx:constant="HAND"/>
+            </cursor>
+        </Button>
+        <Pane fx:id="loadingPane1" layoutY="720.0" opacity="0.8" prefHeight="590.0" prefWidth="1280.0"
+              style="-fx-background-color: #74bfc9;">
+            <children>
+                <ImageView fitHeight="380.0" fitWidth="544.0" layoutX="400.0" layoutY="120.0" pickOnBounds="true"
+                           preserveRatio="true">
+                    <image>
+                        <Image url="@pics/loading.gif"/>
+                    </image>
+                </ImageView>
+                <Pane fx:id="waitingPane2" layoutX="500.0" layoutY="325.0" prefHeight="193.0" prefWidth="325.0"
+                      visible="false">
+                    <children>
+                        <ImageView fitHeight="150.0" fitWidth="300.0" layoutX="-140.0" layoutY="40.0"
+                                   pickOnBounds="true" preserveRatio="true">
+                            <image>
+                                <Image url="@pics/loading2.gif"/>
+                            </image>
+                        </ImageView>
+                        <ImageView fitHeight="150.0" fitWidth="300.0" layoutX="170.0" layoutY="40.0" pickOnBounds="true"
+                                   preserveRatio="true">
+                            <image>
+                                <Image url="@pics/loading2.gif"/>
+                            </image>
+                        </ImageView>
+                        <Label layoutX="40.0" layoutY="50.0" text="算得有点久 请耐心等候" textFill="WHITE">
+                            <font>
+                                <Font size="23.0"/>
+                            </font>
+                        </Label>
+                    </children>
+                </Pane>
+                <Rectangle arcHeight="5.0" arcWidth="5.0" fill="#00000098" height="590.0" opacity="0.2" stroke="WHITE"
+                           strokeType="INSIDE" strokeWidth="0.0" width="1280.0"/>
+            </children>
+        </Pane>
+    </children>
+</Pane>

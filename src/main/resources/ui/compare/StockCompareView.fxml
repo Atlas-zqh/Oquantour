@@ -1,0 +1,220 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.Cursor?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.DatePicker?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.ScrollPane?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.layout.Pane?>
+<?import javafx.scene.shape.Rectangle?>
+<?import javafx.scene.text.Font?>
+
+<Pane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="1700.0"
+      prefWidth="1250.0" xmlns="http://javafx.com/javafx/8.0.111" xmlns:fx="http://javafx.com/fxml/1"
+      fx:controller="ui.compare.StockCompareViewController">
+    <children>
+        <Pane fx:id="searchPane" layoutX="98.0" layoutY="45.0" prefHeight="88.0" prefWidth="1060.0">
+            <children>
+                <Rectangle arcHeight="5.0" arcWidth="5.0" fill="#1f93ff00" height="88.0" stroke="#689cc4"
+                           strokeType="INSIDE" strokeWidth="0.0" width="1060.0"/>
+                <Button fx:id="confirmButton" alignment="CENTER" layoutX="903.0" layoutY="36.0" mnemonicParsing="false"
+                        onAction="#searchInfo" onMouseEntered="#turnRed" onMouseExited="#turnWhite" prefHeight="22.0"
+                        prefWidth="138.0"
+                        style="-fx-background-color: #ffffff00; -fx-border-color: #689cc4; -fx-border-border-width: 1;"
+                        text="C O N F I R M" textFill="#689cc4" wrapText="true">
+                    <font>
+                        <Font name="PingFang SC Regular" size="13.0"/>
+                    </font>
+                    <cursor>
+                        <Cursor fx:constant="HAND"/>
+                    </cursor>
+                </Button>
+                <DatePicker fx:id="startDate" layoutX="12.0" layoutY="35.0" onAction="#changeEndDate" prefHeight="32.0"
+                            prefWidth="180.0" promptText="开始日期：" stylesheets="@../MyDatePicker.css"/>
+                <DatePicker fx:id="endDate" layoutX="256.0" layoutY="35.0" prefHeight="32.0" prefWidth="180.0"
+                            promptText="结束日期：" stylesheets="@../MyDatePicker.css"/>
+                <Label layoutX="499.0" layoutY="34.0" text="股票" textFill="#838383">
+                    <font>
+                        <Font name="PingFang SC Regular" size="23.0"/>
+                    </font>
+                </Label>
+                <TextField fx:id="stock2" layoutX="725.0" layoutY="37.0" prefHeight="26.0" prefWidth="142.0"
+                           promptText="编号／名称" stylesheets="@../MyPane.css">
+                    <font>
+                        <Font name="PingFang SC Regular" size="13.0"/>
+                    </font>
+                    <cursor>
+                        <Cursor fx:constant="TEXT"/>
+                    </cursor>
+                </TextField>
+                <Label layoutX="705.0" layoutY="36.0" text="|" textFill="#689cc4">
+                    <font>
+                        <Font name="PingFang SC" size="25.0"/>
+                    </font>
+                </Label>
+                <TextField fx:id="stock1" layoutX="553.0" layoutY="37.0" prefHeight="26.0" prefWidth="142.0"
+                           promptText="编号／名称" stylesheets="@../MyPane.css">
+                    <font>
+                        <Font name="PingFang SC Regular" size="13.0"/>
+                    </font>
+                    <cursor>
+                        <Cursor fx:constant="TEXT"/>
+                    </cursor>
+                </TextField>
+                <Label layoutX="256.0" layoutY="69.0" prefHeight="10.0" prefWidth="212.0" text="*日期选择范围为2个月～1年"
+                       textFill="#838383" wrapText="true">
+                    <font>
+                        <Font name="PingFang SC Regular" size="12.0"/>
+                    </font>
+                </Label>
+                <Rectangle arcHeight="5.0" arcWidth="5.0" fill="#689cc4" height="32.0" layoutX="8.0" layoutY="35.0"
+                           stroke="BLACK" strokeType="INSIDE" strokeWidth="0.0" width="5.0"/>
+                <Rectangle arcHeight="5.0" arcWidth="5.0" fill="#689cc4" height="32.0" layoutX="252.0" layoutY="35.0"
+                           stroke="BLACK" strokeType="INSIDE" strokeWidth="0.0" width="5.0"/>
+            </children>
+        </Pane>
+        <Label fx:id="stockLabel1" layoutX="165.0" layoutY="177.0" text="股票一" textFill="#838383">
+            <font>
+                <Font name="PingFang SC Regular" size="25.0"/>
+            </font>
+        </Label>
+        <Label fx:id="stockLabel2" layoutX="736.0" layoutY="177.0" text="股票二" textFill="#838383">
+            <font>
+                <Font name="PingFang SC Regular" size="25.0"/>
+            </font>
+        </Label>
+        <Label layoutX="165.0" layoutY="216.0" text="最高：" textFill="#838383">
+            <font>
+                <Font name="PingFang SC Regular" size="25.0"/>
+            </font>
+        </Label>
+        <Label layoutX="165.0" layoutY="255.0" text="最低：" textFill="#838383">
+            <font>
+                <Font name="PingFang SC Regular" size="25.0"/>
+            </font>
+        </Label>
+        <Label layoutX="736.0" layoutY="216.0" text="最高：" textFill="#838383">
+            <font>
+                <Font name="PingFang SC Regular" size="25.0"/>
+            </font>
+        </Label>
+        <Label layoutX="736.0" layoutY="255.0" text="最低：" textFill="#838383">
+            <font>
+                <Font name="PingFang SC Regular" size="25.0"/>
+            </font>
+            <opaqueInsets>
+                <Insets/>
+            </opaqueInsets>
+        </Label>
+        <Label fx:id="maxLabel1" layoutX="251.0" layoutY="216.0" text="--" textFill="#d97555">
+            <font>
+                <Font name="PingFang SC Regular" size="25.0"/>
+            </font>
+        </Label>
+        <Label fx:id="minLabel1" layoutX="251.0" layoutY="255.0" text="--" textFill="#4c9b8e">
+            <font>
+                <Font name="PingFang SC Regular" size="25.0"/>
+            </font>
+        </Label>
+        <Label fx:id="maxLabel2" layoutX="828.0" layoutY="216.0" text="--" textFill="#d97555">
+            <font>
+                <Font name="PingFang SC Regular" size="25.0"/>
+            </font>
+        </Label>
+        <Label fx:id="minLabel2" layoutX="828.0" layoutY="254.0" text="--" textFill="#4c9b8e">
+            <font>
+                <Font name="PingFang SC Regular" size="25.0"/>
+            </font>
+        </Label>
+        <Rectangle arcHeight="5.0" arcWidth="5.0" disable="true" fill="#689cc4" height="220.0" layoutX="705.0"
+                   layoutY="167.0" stroke="BLACK" strokeType="INSIDE" strokeWidth="0.0" width="7.0"/>
+        <Rectangle arcHeight="5.0" arcWidth="5.0" fill="#689cc4" height="220.0" layoutX="132.0" layoutY="167.0"
+                   stroke="BLACK" strokeType="INSIDE" strokeWidth="0.0" width="7.0"/>
+        <Pane fx:id="closeValuePane" layoutX="98.0" layoutY="400.0" prefHeight="600.0" prefWidth="1060.0"
+              style="-fx-background-color: #ffffff00;">
+            <children>
+                <Label alignment="CENTER" prefHeight="600.0" prefWidth="1060.0" text="图表错误" textAlignment="CENTER"
+                       textFill="#838383">
+                    <font>
+                        <Font name="PingFang SC Regular" size="48.0"/>
+                    </font>
+                </Label>
+            </children>
+        </Pane>
+        <Label layoutX="165.0" layoutY="340.0" text="对数收益率方差：" textFill="#838383">
+            <font>
+                <Font name="PingFang SC Regular" size="25.0"/>
+            </font>
+        </Label>
+        <Label fx:id="varianceLabel1" layoutX="374.0" layoutY="340.0" text="出错啦！" textFill="#838383">
+            <font>
+                <Font name="PingFang SC Regular" size="25.0"/>
+            </font>
+        </Label>
+        <Label layoutX="736.0" layoutY="340.0" text="对数收益率方差：" textFill="#838383">
+            <font>
+                <Font name="PingFang SC Regular" size="25.0"/>
+            </font>
+        </Label>
+        <Label fx:id="varianceLabel2" layoutX="939.0" layoutY="340.0" text="出错啦！" textFill="#838383">
+            <font>
+                <Font name="PingFang SC Regular" size="25.0"/>
+            </font>
+        </Label>
+        <Pane fx:id="logReturnPane" layoutX="98.0" layoutY="1039.0" prefHeight="600.0" prefWidth="1060.0"
+              style="-fx-background-color: #ffffff00;">
+            <children>
+                <Label alignment="CENTER" prefHeight="600.0" prefWidth="1060.0" text="图表错误" textAlignment="CENTER"
+                       textFill="#838383">
+                    <font>
+                        <Font name="PingFang SC Regular" size="48.0"/>
+                    </font>
+                </Label>
+            </children>
+        </Pane>
+        <Label fx:id="upLabel1" layoutX="276.0" layoutY="297.0" text="--%" textFill="#d97555">
+            <font>
+                <Font name="PingFang SC Regular" size="25.0"/>
+            </font>
+        </Label>
+        <Label fx:id="upLabel2" layoutX="845.0" layoutY="297.0" text="--%" textFill="#4c9b8e">
+            <font>
+                <Font name="PingFang SC Regular" size="25.0"/>
+            </font>
+        </Label>
+        <ScrollPane fx:id="searchScrollPane2" layoutX="823.0" layoutY="111.0" prefHeight="82.0" prefWidth="142.0"
+                    style="-fx-background-color: #00000080; -fx-border-color: #c2bfbf;"
+                    stylesheets="@../MyScrollPane.css" visible="false">
+            <content>
+                <Pane fx:id="searchNotificationPane2" prefHeight="76.0" prefWidth="117.0">
+                    <children>
+                        <Label fx:id="nullLabel2" layoutX="50.0" layoutY="31.0" text="无结果" textFill="WHITE"/>
+                    </children>
+                </Pane>
+            </content>
+        </ScrollPane>
+        <ScrollPane fx:id="searchScrollPane1" layoutX="651.0" layoutY="111.0" prefHeight="82.0" prefWidth="142.0"
+                    style="-fx-background-color: #00000080; -fx-border-color: #c2bfbf;"
+                    stylesheets="@../MyScrollPane.css" visible="false">
+            <content>
+                <Pane fx:id="searchNotificationPane1" prefHeight="76.0" prefWidth="117.0">
+                    <children>
+                        <Label fx:id="nullLabel1" layoutX="50.0" layoutY="31.0" text="无结果" textFill="WHITE"/>
+                    </children>
+                </Pane>
+            </content>
+        </ScrollPane>
+        <Label layoutX="736.0" layoutY="297.0" text="涨跌幅：" textFill="#838383">
+            <font>
+                <Font name="PingFang SC Regular" size="25.0"/>
+            </font>
+        </Label>
+        <Label layoutX="165.0" layoutY="297.0" text="涨跌幅：" textFill="#838383">
+            <font>
+                <Font name="PingFang SC Regular" size="25.0"/>
+            </font>
+        </Label>
+    </children>
+</Pane>

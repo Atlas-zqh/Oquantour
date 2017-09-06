@@ -1,0 +1,69 @@
+button {
+    outline: none;
+}
+
+.input-tips {
+
+}
+
+.infoHead {
+    font-weight: normal;
+    font-size: 20px;
+    color: #7a7a7a;
+}
+
+.userImgDiv {
+    display: inline-block;
+    zoom: 1;
+    vertical-align: top;
+    /*margin-left: 200px;*/
+}
+
+.userImg {
+    width: 150px;
+    height: 150px;
+    /*border-radius: 200px;*/
+    background-color: #e1e1e1;
+}
+
+.saveModifyButton {
+    border-width: 0;
+    text-decoration: none;
+    margin-top: 40px;
+    padding-top: 2px;
+    width: 100px;
+    height: 35px;
+    background-color: #95a6b3;
+    color: #FFFFFF;
+    float: right;
+}
+
+.mdl-textfield {
+    padding: 0;
+}
+
+.mdl-textfield__label {
+    color: #969696;
+    font-size: 18px;
+    font-weight: 400;
+    top: 20px;
+}
+
+.mdl-textfield__label:after {
+    background-color: #D1A5A5;
+}
+
+.mdl-textfield__error {
+    color: #e39b9f;
+}
+
+.ui.form .field > label {
+    /* display: block; */
+    /* margin: 0 0 .28571429rem; */
+    /* color: rgba(0,0,0,.87); */
+    font-size: 16px;
+    /* font-weight: 700; */
+    color: #7a7a7a;
+    font-weight: normal;
+    text-transform: none;
+}

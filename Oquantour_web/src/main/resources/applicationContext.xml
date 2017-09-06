@@ -1,0 +1,135 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xmlns:context="http://www.springframework.org/schema/context"
+       xmlns:aop="http://www.springframework.org/schema/aop"
+       xmlns:tx="http://www.springframework.org/schema/tx" xmlns:mvc="http://www.springframework.org/schema/mvc"
+       xsi:schemaLocation="http://www.springframework.org/schema/beans
+         http://www.springframework.org/schema/beans/spring-beans-4.2.xsd
+         http://www.springframework.org/schema/context
+         http://www.springframework.org/schema/context/spring-context-4.2.xsd
+         http://www.springframework.org/schema/tx
+         http://www.springframework.org/schema/tx/spring-tx-4.2.xsd
+         http://www.springframework.org/schema/aop
+         http://www.springframework.org/schema/aop/spring-aop-4.2.xsd
+         http://www.springframework.org/schema/mvc
+         http://www.springframework.org/schema/mvc/spring-mvc-4.2.xsd">
+    <context:annotation-config/>
+    <!-- 开启IOC注解扫描 -->
+    <context:component-scan base-package="oquantour"/>
+
+    <!-- 开启MVC注解扫描 -->
+    <mvc:annotation-driven/>
+
+    <!-- 以下为数据库配置 -->
+    <context:property-placeholder location="classpath:jdbc.properties"/>
+    <bean id="myDataSource" class="org.springframework.jdbc.datasource.DriverManagerDataSource">
+        <property name="driverClassName" value="${jdbc.mysql.driverClassName}"/>
+        <property name="url" value="${jdbc.mysql.url}"/>
+        <property name="username" value="${jdbc.mysql.username}"/>
+        <property name="password" value="${jdbc.mysql.password}"/>
+    </bean>
+    <!--以下为hibernate配置-->
+    <!-- 定义Hibernate的SessionFactory -->
+    <bean id="sessionFactory" class="org.springframework.orm.hibernate5.LocalSessionFactoryBean">
+        <property name="dataSource" ref="myDataSource"/>
+        <property name="packagesToScan">
+            <list>
+                <value>oquantour.po</value>
+            </list>
+
+        </property>
+
+
+        <!-- 定义Hibernate的SessionFactory属性 -->
+        <property name="hibernateProperties">
+            <props>
+                <!-- 指定Hibernate的连接方言 -->
+                <prop key="hibernate.dialect">org.hibernate.dialect.MySQLDialect</prop>
+                <prop key="hibernate.show_sql">false</prop>
+                <prop key="hibernate.format_sql">true</prop>
+                <prop key="hibernate.hbm2ddl.auto">update</prop>
+                <!-- 配置启动应用时，是否根据Hibernate映射自动创建数据表 -->
+                <prop key="hibernate.hbm2ddl.auto">update</prop>
+                <prop key="hibernate.connection.autocommit">true</prop>
+                <!--<prop key="hibernate.cache.use_query_cache">false</prop>-->
+            </props>
+        </property>
+    </bean>
+
+
+    <bean id="hibernateTemplate" class="org.springframework.orm.hibernate5.HibernateTemplate">
+        <property name="sessionFactory" ref="sessionFactory"></property>
+    </bean>
+
+    <!-- userDao -->
+    <bean id="userDao" class="oquantour.data.daoImpl.UserDaoImpl">
+        <property name="hibernateTemplate" ref="hibernateTemplate"></property>
+    </bean>
+    <!-- stockDao -->
+    <bean id="stockDao" class="oquantour.data.daoImpl.StockDaoImpl">
+        <property name="hibernateTemplate" ref="hibernateTemplate"></property>
+    </bean>
+    <!-- plateDao -->
+    <bean id="plateDao" class="oquantour.data.daoImpl.PlateDaoImpl">
+        <property name="hibernateTemplate" ref="hibernateTemplate"></property>
+    </bean>
+    <!-- basicDao -->
+    <bean id="basicDao" class="oquantour.data.daoImpl.BasicStockDaoImpl">
+        <property name="hibernateTemplate" ref="hibernateTemplate"></property>
+    </bean>
+    <!-- combinationDao -->
+    <bean id="combinationDao" class="oquantour.data.daoImpl.CombinationDaoImpl">
+        <property name="hibernateTemplate" ref="hibernateTemplate"></property>
+    </bean>
+    <!-- industryDao -->
+    <bean id="industryDao" class="oquantour.data.daoImpl.IndustryDaoImpl">
+        <property name="hibernateTemplate" ref="hibernateTemplate"></property>
+    </bean>
+
+
+    <bean id="backTestService" class="oquantour.service.serviceImpl.BackTestServiceImpl"></bean>
+
+
+    <!-- 定义事务管理器（声明式的事务） -->
+
+    <bean id="transactionManager"
+          class="org.springframework.orm.hibernate5.HibernateTransactionManager">
+        <property name="sessionFactory" ref="sessionFactory"/>
+    </bean>
+
+    <!-- 事务的传播特性 -->
+    <tx:advice id="txAdvice" transaction-manager="transactionManager">
+        <tx:attributes>
+            <tx:method name="add*" propagation="REQUIRED"/>
+            <tx:method name="del*" propagation="REQUIRED"/>
+            <tx:method name="update*" propagation="REQUIRED"/>
+            <tx:method name="*" read-only="false"/>
+            <!--<tx:method name="*" read-only="false"/>-->
+        </tx:attributes>
+    </tx:advice>
+    <tx:annotation-driven transaction-manager="transactionManager" proxy-target-class="false"/>
+    <!-- 哪些类哪些方法使用事务 -->
+    <aop:config>
+        <!-- 只对业务逻辑层实施事务 -->
+        <aop:pointcut id="interceptorPointCuts"
+                      expression="execution(* oquantour.service..*.*(..))"/>
+        <aop:pointcut id="interceptorPointCuts1"
+                      expression="execution(* oquantour.data..*.*(..))"/>
+
+        <aop:advisor advice-ref="txAdvice" pointcut-ref="interceptorPointCuts1"/>
+        <aop:advisor advice-ref="txAdvice" pointcut-ref="interceptorPointCuts"/>
+    </aop:config>
+
+
+    <!-- 以下为视图映射配置 -->
+    <bean class="org.springframework.web.servlet.view.InternalResourceViewResolver">
+        <property name="prefix" value="/WEB-INF/jsp/"/>
+        <property name="suffix" value=".jsp"/>
+    </bean>
+
+
+    <!-- 其他配置 -->
+    <!-- 静态文件访问 -->
+    <mvc:default-servlet-handler/>
+</beans>

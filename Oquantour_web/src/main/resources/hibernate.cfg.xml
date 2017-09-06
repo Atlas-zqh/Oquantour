@@ -1,0 +1,46 @@
+<?xml version='1.0' encoding='utf-8'?>
+<!DOCTYPE hibernate-configuration PUBLIC
+        "-//Hibernate/Hibernate Configuration DTD//EN"
+        "http://www.hibernate.org/dtd/hibernate-configuration-3.0.dtd">
+<hibernate-configuration>
+    <session-factory>
+        <property name="connection.url">jdbc:mysql://rm-uf642ud0yc526m31ko.mysql.rds.aliyuncs.com:3306/oquantour
+        </property>
+        <property name="connection.driver_class">com.mysql.jdbc.Driver</property>
+        <!-- 指定连接数据库的用户名 -->
+        <property name="connection.username">root</property>
+        <!--连接数据库是密码-->
+        <property name="connection.password">Octopus2017</property>
+        <!-- 指定对应数据库的方言，hibernate为了更好适配各种关系数据库，针对每种数据库都指定了一个方言dialect -->
+        <property name="hibernate.dialect">org.hibernate.dialect.MySQLDialect</property>
+        <property name="numTestsPerEvictionRun">3</property>
+        <property name="minEvictableIdleTimeMillis">240000</property>
+        <property name="testOnBorrow">true</property>
+        <property name="testWhileIdle">true</property>
+        <property name="testOnReturn">true</property>
+        <property name="validationQuery">SELECT 1</property>
+        <!--<property name="c3p0.min_size">5</property>-->
+        <!--<property name="c3p0.max_size">2000</property>-->
+        <!--<property name="c3p0.time_out">1800</property>-->
+        <!--<property name="c3p0.max_statement">1000</property>-->
+
+        <!--<property name="connection.autocommit">true</property>-->
+        <!--<property name="hibernate.cache.use_query_cache">false</property>-->
+        <!--<property name="show_sql">true</property>-->
+        <!--DB schema will be updated if needed -->
+        <!-- <property name="hbm2ddl.auto">update</property> -->
+        <mapping class="oquantour.po.StockPO"/>
+        <mapping class="oquantour.po.UserPO"/>
+        <mapping class="oquantour.po.PlateinfoPO"/>
+        <mapping class="oquantour.po.StockSelectedByUser"/>
+        <mapping class="oquantour.po.StockCombinationPO"/>
+        <mapping class="oquantour.po.StockBasicInfoPO"/>
+        <mapping class="oquantour.po.StockRealTimePO"/>
+        <mapping class="oquantour.po.IndustryPO"/>
+        <mapping class="oquantour.po.PlateRealTimePO"/>
+        <mapping class="oquantour.po.TopListPO"/>
+        <mapping class="oquantour.po.NewsPO"/>
+
+
+    </session-factory>
+</hibernate-configuration>

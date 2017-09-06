@@ -1,0 +1,63 @@
+.combineInfoHead {
+    color: #fff;
+    font-size: 40px;
+    font-weight: normal;
+}
+
+/*#combinationTable {*/
+/*width: 100%;*/
+/*border-collapse: separate;*/
+/*border-spacing: 15px;*/
+/*}*/
+
+.combinationTableDate {
+    color: #908e8e;
+    /*background-color: #e1efff;*/
+    font-size: 18px;
+    font-weight: normal;
+}
+
+.combinationTableSpecInfoHead {
+    color: #878585;
+    font-size: 16px;
+    font-weight: normal;
+}
+
+.combinationTableSpecInfo {
+    color: #878585;
+    font-size: 15px;
+    font-weight: 300;
+}
+
+.divHead {
+    font-weight: normal;
+    font-size: 20px;
+    color: #95a6b3;
+    letter-spacing: 2px;
+}
+
+.splitLine {
+    width: 100%;
+    background-color: #e1e1e1;
+    height: 1px;
+    margin-bottom: 10px;
+}
+
+.tableHead {
+    font-size: 13px;
+    color: #acacac;
+}
+
+.tableContent {
+    color: #6a6a6a;
+    font-size: 16px;
+    font-weight: 300;
+}
+
+#adjustDiv:hover {
+    cursor: pointer;
+}
+
+#deleteDiv:hover {
+    cursor: pointer;
+}

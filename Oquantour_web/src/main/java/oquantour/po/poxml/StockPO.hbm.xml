@@ -1,0 +1,22 @@
+<?xml version='1.0' encoding='utf-8'?>
+<!DOCTYPE hibernate-mapping PUBLIC
+        "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+        "http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
+<hibernate-mapping>
+
+    <class name="oquantour.po.StockPO" table="stockpo" schema="oquantour">
+        <composite-id mapped="true" class="oquantour.po.StockPOPK">
+            <key-property name="stockId" column="StockID"/>
+            <key-property name="dateValue" column="DateValue"/>
+        </composite-id>
+        <property name="adjClose" column="AdjClose"/>
+        <property name="closePrice" column="ClosePrice"/>
+        <property name="countSerial" column="CountSerial"/>
+        <property name="highPrice" column="HighPrice"/>
+        <property name="lowPrice" column="LowPrice"/>
+        <property name="market" column="Market"/>
+        <property name="openPrice" column="OpenPrice"/>
+        <property name="stockName" column="StockName"/>
+        <property name="volume" column="Volume"/>
+    </class>
+</hibernate-mapping>

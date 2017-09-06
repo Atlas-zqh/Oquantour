@@ -1,0 +1,25 @@
+* {
+    box-sizing: border-box;
+}
+
+body {
+    margin: 0;
+    font-family: "PingFang SC", serif;
+}
+
+* input {
+    color: #535353;
+    font-weight: 300;
+    font-size: 16px;
+}
+
+* input:-webkit-autofill {
+    /*background-color: #ffffff;*/
+    color: #535353;
+    font-size: 16px;
+    -webkit-box-shadow: 0 0 0px 1000px white inset;
+}
+
+* a:hover {
+    text-decoration: none;
+}

@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE struts PUBLIC
+        "-//Apache Software Foundation//DTD Struts Configuration 2.1.7//EN"
+        "http://struts.apache.org/dtds/struts-2.1.7.dtd">
+<struts>
+    <package name="default" extends="json-default,struts-default">
+        <action name="login" class="oquantour.action.UserAuthAction" method="login">
+            <result type="json">
+                <param name="root">result</param>
+            </result>
+        </action>
+        <action name="register" class="oquantour.action.UserAuthAction" method="register">
+            <result type="json">
+                <param name="root">result</param>
+            </result>
+        </action>
+        <action name="logout" class="oquantour.action.UserAuthAction" method="logout">
+            <result type="json">
+                <param name="root">result</param>
+            </result>
+        </action>
+        <action name="modifyUserInfo" class="oquantour.action.UserAuthAction" method="modifyUserInfo">
+            <result type="json">
+                <param name="root">result</param>
+            </result>
+        </action>
+        <!--<action name="getUserInfo" class="oquantour.action.UserAuthAction" method="getUserInfo">-->
+        <!--<result type="json">-->
+        <!--<param name="root">result</param>-->
+        <!--</result>-->
+        <!--&lt;!&ndash;<result type="dispatcher" name="success">/jsp/personalInfo.jsp</result>&ndash;&gt;-->
+        <!--&lt;!&ndash;<param name="result">result</param>&ndash;&gt;-->
+        <!--</action>-->
+    </package>
+</struts>

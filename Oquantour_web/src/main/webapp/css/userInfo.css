@@ -1,0 +1,81 @@
+#userAva {
+    display: inline-block;
+    vertical-align: middle;
+    background: url("pic/user.png") center no-repeat;
+    background-size: cover;
+    border-width: 0;
+    text-decoration: none;
+    /*margin-left: 140px;*/
+    /*margin-top: 2px;*/
+    padding-top: 2px;
+    width: 40px;
+    height: 40px;
+    margin-top: -2px;
+    margin-right: 5px;
+}
+
+#userName {
+    color: #ffffff;
+}
+
+.userDiv {
+    position: relative;
+    display: inline-block;
+    zoom: 1;
+    padding-left: 0;
+    padding-right: 10px;
+}
+
+.userDiv:hover {
+    /*cursor: pointer;*/
+    background-color: #aabdcc;
+}
+
+.userDiv:hover .userInfoDiv {
+    display: block;
+}
+
+.userInfoDiv label {
+    color: #95a6b3;
+    font-size: 16px;
+    font-weight: 300;
+}
+
+.userInfoDiv label:hover {
+    cursor: pointer;
+}
+
+.userInfoDiv div {
+    width: 100%;
+    padding: 12px;
+}
+
+.userInfoDiv {
+    display: none;
+    position: absolute;
+    background-color: #f2f2f2;
+    width: 200%;
+    box-shadow: 0 8px 16px 0 rgba(0, 0, 0, 0.2);
+    /*padding: 10px;*/
+}
+
+.personalHomeDiv:hover {
+    background-color: #d8d8d8;
+    cursor: pointer;
+}
+
+.personalSettingDiv:hover {
+    background-color: #d8d8d8;
+    cursor: pointer;
+}
+
+#exitButton {
+    background: #95a6b3;
+    border: none;
+    color: #ffffff;
+    padding: 5px;
+    font-size: 14px;
+    font-weight: 300;
+    text-align: center;
+    width: 100%;
+}

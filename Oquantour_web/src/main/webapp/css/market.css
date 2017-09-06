@@ -1,0 +1,216 @@
+a {
+    color: #95a6b3;
+    text-decoration: none;
+}
+
+a:hover {
+    color: #595959;
+}
+
+#navUl li {
+    padding-left: 20px;
+}
+
+#navUl li:hover {
+    background-color: #e1e1e1;
+    cursor: pointer;
+}
+
+#rightPart {
+    display: inline-block;
+    vertical-align: top;
+    margin-left: 170px;
+    width: 1100px;
+    height: auto;
+    padding: 20px;
+    /*box-shadow: 0 2px 10px 5px #dadada;*/
+}
+
+#leftPart {
+    display: inline-block;
+    vertical-align: top;
+    position: fixed;
+    width: 150px;
+    height: auto;
+    border: solid 1px #e1e1e1;
+    /*box-shadow: 0 2px 10px 5px #dadada;*/
+}
+
+#marketTemp {
+    font-size: 25px;
+    color: #cdac87;
+    margin-top: 40px;
+}
+
+#marketOverviewDiv {
+    display: inline-block;
+    margin-bottom: 40px;
+    width: 100%;
+    /*border: solid 1px #e1e1e1;*/
+}
+
+#quotesRankingDiv {
+    display: inline-block;
+    margin-bottom: 40px;
+    width: 100%;
+    /*border: solid 1px #e1e1e1;*/
+}
+
+#heatRankingDiv {
+    display: inline-block;
+    margin-bottom: 40px;
+    width: 100%;
+}
+
+.divHead {
+    font-weight: normal;
+    font-size: 20px;
+    color: #95a6b3;
+    letter-spacing: 2px;
+}
+
+.splitLine {
+    width: 100%;
+    background-color: #e1e1e1;
+    height: 1px;
+    margin-bottom: 10px;
+}
+
+.indexHead {
+    font-weight: normal;
+    font-size: 18px;
+    color: #7a7a7a;
+}
+
+.indexNum {
+    font-weight: normal;
+    font-size: 18px;
+    color: #cd8585;
+}
+
+.otherStatistics {
+    font-weight: 300;
+    font-size: 15px;
+    color: #7a7a7a;
+}
+
+.indexChange {
+    font-weight: normal;
+    font-size: 14px;
+    color: #cd8585;
+}
+
+#changeRankingDiv {
+    display: inline-block;
+    vertical-align: top;
+    width: 30%;
+    height: auto;
+    margin-right: 4%;
+    /*border: solid 1px #e1e1e1;*/
+    padding: 10px;
+}
+
+#volumeRankingDiv {
+    display: inline-block;
+    vertical-align: top;
+    width: 30%;
+    height: auto;
+    margin-right: 5%;
+    /*border: solid 1px #e1e1e1;*/
+    padding: 10px;
+}
+
+#turnOverRankingDiv {
+    display: inline-block;
+    vertical-align: top;
+    width: 30%;
+    height: auto;
+    /*border: solid 1px #e1e1e1;*/
+    padding: 10px;
+}
+
+.rankingDivHead {
+    color: #666666;
+    font-weight: normal;
+    font-size: 16px;
+}
+
+.nav > li > a {
+    position: relative;
+    display: block;
+    padding: 2px 25px;
+}
+
+.tableHead {
+    font-size: 13px;
+    color: #acacac;
+}
+
+.tableContent {
+    color: #6a6a6a;
+    font-size: 16px;
+    font-weight: 300;
+}
+
+.changeRankingTable {
+    width: 100%;
+    border-collapse: separate;
+    border-spacing: 10px;
+}
+
+#up-down-icon {
+    display: inline-block;
+    width: 15px;
+    height: 13px;
+    background: url("pic/up.png") center no-repeat;
+    background-size: cover;
+}
+
+#changeRankTh {
+    cursor: pointer;
+}
+
+#up-down-icon1 {
+    display: inline-block;
+    width: 15px;
+    height: 13px;
+    background: url("pic/up.png") center no-repeat;
+    background-size: cover;
+}
+
+#changeRankTh1 {
+    cursor: pointer;
+}
+
+#up-down-icon2 {
+    display: inline-block;
+    width: 15px;
+    height: 13px;
+    background: url("pic/up.png") center no-repeat;
+    background-size: cover;
+}
+
+#changeRankTh2 {
+    cursor: pointer;
+}
+
+#up-down-icon3 {
+    display: inline-block;
+    width: 15px;
+    height: 13px;
+    background: url("pic/up.png") center no-repeat;
+    background-size: cover;
+}
+
+#changeRankTh3 {
+    cursor: pointer;
+}
+
+.upStock {
+    color: red;
+}
+
+td.downStock {
+    color: green;
+}
+

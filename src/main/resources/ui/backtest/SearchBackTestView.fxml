@@ -1,0 +1,103 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.Cursor?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.DatePicker?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.layout.Pane?>
+<?import javafx.scene.shape.Rectangle?>
+<?import javafx.scene.text.Font?>
+
+<Pane fx:id="searchPane" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity"
+      prefHeight="405.0" prefWidth="1280.0" style="-fx-background-color: #ffffff00;"
+      xmlns="http://javafx.com/javafx/8.0.111" xmlns:fx="http://javafx.com/fxml/1"
+      fx:controller="ui.backtest.SearchBackTestController">
+    <children>
+        <Rectangle arcHeight="5.0" arcWidth="5.0" fill="#292929" height="407.0" layoutX="-1.0" layoutY="-1.0"
+                   opacity="0.69" stroke="BLACK" strokeType="INSIDE" strokeWidth="0.0" width="1282.0"/>
+        <DatePicker fx:id="startDate" layoutX="229.0" layoutY="127.0" onAction="#changeEndDate" prefHeight="30.0"
+                    prefWidth="300.0" promptText="开始日期：" style="-fx-background-color: #ffffff00;"
+                    stylesheets="@../MyDatePicker.css"/>
+        <DatePicker fx:id="endDate" layoutX="734.0" layoutY="127.0" prefHeight="30.0" prefWidth="300.0"
+                    promptText="结束日期：" style="-fx-background-color: #ffffff00;" stylesheets="@../MyDatePicker.css"/>
+        <Label layoutX="70.0" layoutY="12.0" prefHeight="47.0" prefWidth="243.0" text="B A C K T E S T" textFill="WHITE"
+               wrapText="true">
+            <font>
+                <Font name="PingFang SC Regular" size="28.0"/>
+            </font>
+        </Label>
+        <Rectangle arcHeight="5.0" arcWidth="5.0" fill="#ffb199" height="30.0" layoutX="732.0" layoutY="127.0"
+                   stroke="BLACK" strokeType="INSIDE" strokeWidth="0.0" width="3.0"/>
+        <Rectangle arcHeight="5.0" arcWidth="5.0" fill="#ffb199" height="30.0" layoutX="227.0" layoutY="127.0"
+                   stroke="BLACK" strokeType="INSIDE" strokeWidth="0.0" width="3.0"/>
+        <Button fx:id="confirmButton" layoutX="734.0" layoutY="257.0" mnemonicParsing="false" onAction="#confirm"
+                onMouseEntered="#turnOrange" onMouseExited="#turnWhite" prefHeight="30.0" prefWidth="300.0"
+                style="-fx-background-color: #ffffff00; -fx-border-color: #ffffffff; -fx-border-width: 1;"
+                text="C  O  N  F  I  R  M" textFill="WHITE">
+            <font>
+                <Font name="PingFang SC Regular" size="14.0"/>
+            </font>
+            <cursor>
+                <Cursor fx:constant="HAND"/>
+            </cursor>
+        </Button>
+        <Label layoutX="230.0" layoutY="105.0" text="S T A R T " textFill="WHITE">
+            <font>
+                <Font name="PingFang SC Regular" size="17.0"/>
+            </font>
+        </Label>
+        <Label layoutX="735.0" layoutY="105.0" text="E N D" textFill="WHITE">
+            <font>
+                <Font name="PingFang SC Regular" size="17.0"/>
+            </font>
+        </Label>
+        <Label layoutX="231.0" layoutY="235.0" text="S T R A T E G Y" textFill="WHITE">
+            <font>
+                <Font name="PingFang SC Regular" size="17.0"/>
+            </font>
+        </Label>
+        <Rectangle arcHeight="5.0" arcWidth="5.0" fill="#689cc4" height="57.0" layoutX="40.0" layoutY="10.0"
+                   stroke="BLACK" strokeType="INSIDE" strokeWidth="0.0" width="5.0"/>
+        <Label layoutX="735.0" layoutY="151.0" prefHeight="30.0" prefWidth="212.0" text="*日期选择范围至少为2个月" textFill="WHITE"
+               wrapText="true">
+            <font>
+                <Font name="PingFang SC Regular" size="12.0"/>
+            </font>
+        </Label>
+        <Label layoutX="232.0" layoutY="286.0" prefHeight="30.0" prefWidth="212.0" text="*请选择一种回测策略" textFill="WHITE"
+               wrapText="true">
+            <font>
+                <Font name="PingFang SC Regular" size="12.0"/>
+            </font>
+        </Label>
+        <Button fx:id="meanButton" layoutX="403.0" layoutY="259.0" mnemonicParsing="false" onAction="#selectMean"
+                onMouseEntered="#meTurnOrange" onMouseExited="#meTurnWhite" prefHeight="32.0" prefWidth="123.0"
+                style="-fx-background-color: #ffffff00; -fx-border-color: #ffffffff; -fx-border-width: 1; -fx-border-radius: 50;"
+                text="均 值 回 归" textFill="WHITE">
+            <font>
+                <Font name="PingFang SC Regular" size="14.0"/>
+            </font>
+            <cursor>
+                <Cursor fx:constant="HAND"/>
+            </cursor>
+        </Button>
+        <Button fx:id="momentumButton" layoutX="230.0" layoutY="259.0" mnemonicParsing="false"
+                onAction="#selectMomentum" onMouseEntered="#moTurnOrange" onMouseExited="#moTurnWhite" prefHeight="32.0"
+                prefWidth="123.0"
+                style="-fx-background-color: #ffffff00; -fx-border-color: #ffffffff; -fx-border-width: 1; -fx-border-radius: 50;"
+                text="动 量 策 略" textFill="WHITE">
+            <font>
+                <Font name="PingFang SC Regular" size="14.0"/>
+            </font>
+            <cursor>
+                <Cursor fx:constant="HAND"/>
+            </cursor>
+        </Button>
+        <Label alignment="CENTER" layoutX="364.0" layoutY="256.0" prefHeight="35.0" prefWidth="26.0" text="|"
+               textAlignment="CENTER" textFill="#9e9999">
+            <font>
+                <Font size="29.0"/>
+            </font>
+        </Label>
+    </children>
+</Pane>
